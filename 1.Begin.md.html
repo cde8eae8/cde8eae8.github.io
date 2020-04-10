@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>1.Begin</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style>
+  body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    padding: 30px; }
+
+  body > *:first-child {
+    margin-top: 0 !important; }
+  body > *:last-child {
+    margin-bottom: 0 !important; }
+
+  a {
+    color: #4183C4; }
+  a.absent {
+    color: #cc0000; }
+  a.anchor {
+    display: block;
+    padding-left: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0; }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    cursor: text;
+    position: relative; }
+
+  h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    background: url("../../images/modules/styleguide/para.png") no-repeat 10px center;
+    text-decoration: none; }
+
+  h1 tt, h1 code {
+    font-size: inherit; }
+
+  h2 tt, h2 code {
+    font-size: inherit; }
+
+  h3 tt, h3 code {
+    font-size: inherit; }
+
+  h4 tt, h4 code {
+    font-size: inherit; }
+
+  h5 tt, h5 code {
+    font-size: inherit; }
+
+  h6 tt, h6 code {
+    font-size: inherit; }
+
+  h1 {
+    font-size: 28px;
+    color: black; }
+
+  h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    color: black; }
+
+  h3 {
+    font-size: 18px; }
+
+  h4 {
+    font-size: 16px; }
+
+  h5 {
+    font-size: 14px; }
+
+  h6 {
+    color: #777777;
+    font-size: 14px; }
+
+  p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 15px 0; }
+
+  hr {
+    background: transparent url("../../images/modules/pulls/dirty-shade.png") repeat-x 0 0;
+    border: 0 none;
+    color: #cccccc;
+    height: 4px;
+    padding: 0; }
+
+  body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+    body > h1:first-child + h2 {
+      margin-top: 0;
+      padding-top: 0; }
+  body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+
+  a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0; }
+
+  h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+    margin-top: 0; }
+
+  li p.first {
+    display: inline-block; }
+
+  ul, ol {
+    padding-left: 30px; }
+
+  ul :first-child, ol :first-child {
+    margin-top: 0; }
+
+  ul :last-child, ol :last-child {
+    margin-bottom: 0; }
+
+  dl {
+    padding: 0; }
+    dl dt {
+      font-size: 14px;
+      font-weight: bold;
+      font-style: italic;
+      padding: 0;
+      margin: 15px 0 5px; }
+      dl dt:first-child {
+        padding: 0; }
+      dl dt > :first-child {
+        margin-top: 0; }
+      dl dt > :last-child {
+        margin-bottom: 0; }
+    dl dd {
+      margin: 0 0 15px;
+      padding: 0 15px; }
+      dl dd > :first-child {
+        margin-top: 0; }
+      dl dd > :last-child {
+        margin-bottom: 0; }
+
+  blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777; }
+    blockquote > :first-child {
+      margin-top: 0; }
+    blockquote > :last-child {
+      margin-bottom: 0; }
+
+  table {
+    padding: 0; }
+    table tr {
+      border-top: 1px solid #cccccc;
+      background-color: white;
+      margin: 0;
+      padding: 0; }
+      table tr:nth-child(2n) {
+        background-color: #f8f8f8; }
+      table tr th {
+        font-weight: bold;
+        border: 1px solid #cccccc;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px; }
+      table tr td {
+        border: 1px solid #cccccc;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px; }
+      table tr th :first-child, table tr td :first-child {
+        margin-top: 0; }
+      table tr th :last-child, table tr td :last-child {
+        margin-bottom: 0; }
+
+  img {
+    max-width: 100%; }
+
+  span.frame {
+    display: block;
+    overflow: hidden; }
+    span.frame > span {
+      border: 1px solid #dddddd;
+      display: block;
+      float: left;
+      overflow: hidden;
+      margin: 13px 0 0;
+      padding: 7px;
+      width: auto; }
+    span.frame span img {
+      display: block;
+      float: left; }
+    span.frame span span {
+      clear: both;
+      color: #333333;
+      display: block;
+      padding: 5px 0 0; }
+  span.align-center {
+    display: block;
+    overflow: hidden;
+    clear: both; }
+    span.align-center > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px auto 0;
+      text-align: center; }
+    span.align-center span img {
+      margin: 0 auto;
+      text-align: center; }
+  span.align-right {
+    display: block;
+    overflow: hidden;
+    clear: both; }
+    span.align-right > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px 0 0;
+      text-align: right; }
+    span.align-right span img {
+      margin: 0;
+      text-align: right; }
+  span.float-left {
+    display: block;
+    margin-right: 13px;
+    overflow: hidden;
+    float: left; }
+    span.float-left span {
+      margin: 13px 0 0; }
+  span.float-right {
+    display: block;
+    margin-left: 13px;
+    overflow: hidden;
+    float: right; }
+    span.float-right > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px auto 0;
+      text-align: right; }
+
+  code, tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px; }
+
+  pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent; }
+
+  .highlight pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px; }
+
+  pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px; }
+    pre code, pre tt {
+      background-color: transparent;
+      border: none; }
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#python">Python</a>
+<ul>
+<li><a href="#что-то-про-массивы">Что-то про массивы</a></li>
+<li><a href="#что-то-про-список-чисел">Что-то про список чисел</a></li>
+<li><a href="#что-то-про-рисование">Что-то про рисование</a></li>
+<li><a href="#что-то-про-множества">Что-то про множества</a></li>
+<li><a href="#что-то-теорверное">Что-то теорверное</a></li>
+<li><a href="#что-то-комбинаторное">Что-то комбинаторное</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="python">Python</h1>
+<h3 id="что-то-про-массивы">Что-то про массивы</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>np.random.choice(pool, n, replace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<p><code>pool</code> - список объектов из которых выбираем случайный</p>
+<p><code>n</code> - сколько объектов выбрать, если не указать, то выберет 1 объект и вернет не список, а этот объект</p>
+<p>Вернет список из <code>n</code> объектов, случайно выбранных из <code>pool</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>np.unique(arr)</span></code></pre></div>
+<p>Вернет список уникальных элементов из <code>arr</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">len</span>(arr)</span></code></pre></div>
+<p>Вернет число элементов списка</p>
+<h3 id="что-то-про-список-чисел">Что-то про список чисел</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">range</span>(end)</span></code></pre></div>
+<p>Вернет список чисел <code>0, ..., end - 1</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">range</span>(beg, end)</span></code></pre></div>
+<p>Вернет список чисел <code>beg, ..., end - 1</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="bu">range</span>(beg, end, step)</span></code></pre></div>
+<p>Вернет список чисел вида из отрезка <code>[beg, end)</code>вида <code>beg + step * k, k = 0, 1, 2...</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>np.arange(beg, end, step)</span></code></pre></div>
+<p>Как <code>range(beg, end, step)</code>, только ему можно как аргументы указать дробные числа, у <code>range</code> - только целые</p>
+<h3 id="что-то-про-рисование">Что-то про рисование</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>plt.plot(x_values, y_values, описание...)</span></code></pre></div>
+<p>Рисует график по <code>x_values</code> и <code>y_values</code>, это два списка одной длины, мы просто берем по значению из каждого списка и отмечаем на графике эту точку, так для всех Описание может быть довольно обширным, можешь глянуть документацию, но непонятно зачем В лабе одно из описаний - строка <code>"go"</code> - означает "маркеры будут большими круглыми кружками (это <code>o</code>) зеленого цвета (а это <code>g</code>)"</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>plt.title(string)</span></code></pre></div>
+<p>Добавляет название</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>plt.xlabel(string)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>plt.ylabel(string)</span></code></pre></div>
+<p>Добавляет подпись оси</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>plt.vlines(points, bottom, top, описание...)</span></code></pre></div>
+<p><code>points</code> - массив чисел по оси x, для которых рисуем вертикальные линии</p>
+<p><code>bottom</code> - число, высота по вертикали где нижняя точка прямой</p>
+<p><code>top</code> - число, высота по вертикали где верхняя точка прямой</p>
+<p><code>описание...</code> - умеет много, в лабе есть:</p>
+<ul>
+<li><code>colors = '0.2'</code>, это цвет линии - 0.2 серого. Принимает любой цвет, например если поставить <code>'g'</code>, будет зеленый</li>
+<li><code>linestyles = 'dotted'</code>, это что линия будет в точечку, там всего 4 варианта</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>plt.hlines(points, bottom, top, описание...)</span></code></pre></div>
+<p>Аналогично <code>vlines</code></p>
+<h3 id="что-то-про-множества">Что-то про множества</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">set</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>]) <span class="op">-&gt;</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>}</span></code></pre></div>
+<p>Как список, только элементы не повторяются Умеет например в операцию <code>-</code>, получим множество, состоящее из элементов которые есть в левом и которых нет в правом множестве (обычная разность множеств)</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">set</span>.pop()</span></code></pre></div>
+<p>Вернет какой-то элемент и удалит его из множества, какой именно неизвестно</p>
+<h3 id="что-то-теорверное">Что-то теорверное</h3>
+<p>Ну, вероятность события, если исходы имеют равную вероятность (например броски кубика), это просто число хороших исходов делить на все исходы</p>
+<h3 id="что-то-комбинаторное">Что-то комбинаторное</h3>
+<p>Например, вариантов получить разные последовательности для бросков 5 костей будет <code>6^5</code>, так как первая кость могла выпасть 6 способами, вторая тоже, и так далее, то есть надо выбрать на каждое из 5 мест одно из 6 значение независимо</p>
+<h4 id="страйк">Страйк</h4>
+<p>хотим чтобы числа на костях шли по возрастанию Для 5 костей это 2 набора <code>{1, 2, 3, 4, 5}</code> и <code>{2, 3, 4, 5, 6}</code></p>
+<p>Так как порядок костей не важен, надо умножить на <code>5!</code> - число перестановок из 5 элементов. Это чтобы посчитать варианты <code>[1, 2, 3, 4, 5]</code>, <code>[1, 2, 3, 5, 4]</code> и так далее</p>
+<h4 id="фулл-хаус">Фулл хаус</h4>
+<p>Хотим все броски 5 костей, что 3 из них имеют одно значение и 2 других другое, либо все одинаковое Давай сначала выберем 3 кости для "одного значения", тогда оставшиеся 2 будут иметь это "другое значение". После этого выберем пару чисел из 6 чисел - значение для 3 костей и значение для оставшихся 2</p>
+<p>Способов выбрать 3 какие-то кости из 5 это число сочетаний из 5 по 3. Способов выбрать пару из 6 чисел это число размещенией из 6 по 2</p>
+<p>В итоге получаем <code>C[3, 5] * A[2, 6] = 300</code> - всего вариантов получить фулл хаус</p>
+</body>
+</html>
