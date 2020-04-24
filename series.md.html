@@ -324,6 +324,34 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+<h3 id="курс-превращения-матана-в-религию-и-философа-в-невыспавшегося-философа">Курс превращения матана в религию и философа в невыспавшегося философа</h3>
+<h3 id="предел">Предел</h3>
+<p>Колдую!</p>
+<p>Формальное определение, что предел последовательности <span class="math inline">\(a_n\)</span> равен A: <span class="math display">\[\forall \varepsilon &gt; 0 \exists N : \forall n &gt; N |a_n - A| &lt; \varepsilon \]</span></p>
+<h6 id="перевод">Перевод</h6>
+<p><span class="math inline">\(\forall\)</span> означает для любого; <span class="math inline">\(\exists\)</span> - существует; <span class="math inline">\(:\)</span> - “такой, что”; <span class="math inline">\(|x|\)</span> - модуль <span class="math inline">\(x\)</span>, равен <span class="math inline">\(x\)</span> для <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\(-x\)</span> для <span class="math inline">\(x &lt; 0\)</span>.</p>
+<p>Получаем “Для любого положительного эпсилон существует <span class="math inline">\(N\)</span>, такой что для любого <span class="math inline">\(n &gt; N\)</span> выполнено <span class="math inline">\(|a_n - A|\)</span> меньше эпсилон”</p>
+<p>Это “Для любого положительного эпсилон существует <span class="math inline">\(N\)</span>, начиная с которого для каждого элемента <span class="math inline">\(a_n\)</span> последовательности будет выполнено <span class="math inline">\(a_n\)</span> отличается от <span class="math inline">\(A\)</span> не больше чем на эпсилон”</p>
+<p>Если еще проще, то какое бы маленькое число эпсилон мы не взяли, начиная с некоторого момента все дальнейшие значения последовательности будут отличаться от A не больше чем на это маленькое число. Для каждого отдельного эпсилон этот начальный момент может быть разным, но факт в том, что он существует.</p>
+<h3 id="полезный-факт-об-оценке">Полезный факт об оценке</h3>
+<blockquote>
+<p>Если <span class="math inline">\(a \le b\)</span>, то <span class="math inline">\(\frac{1}{a} \ge \frac{1}{b}\)</span></p>
+<p>Если <span class="math inline">\(\frac{1}{a} \ge \frac{1}{b}\)</span>, то <span class="math inline">\(a \le b\)</span></p>
+</blockquote>
+<h3 id="теорема-о-2-городовых">Теорема (о 2 городовых)</h3>
+<div class="let">
+<p><span class="math inline">\(0 \le a_n \le b_n\)</span> - то есть <span class="math inline">\(0 \le a_1 \le b_1; 0 \le a_2 \le b_2; 0 \le a_3 \le b_3; \cdots\)</span></p>
+<p>А также <span class="math inline">\(\lim\limits_{n \to \infty} b_n = 0\)</span></p>
+</div>
+<div class="then">
+<p><span class="math inline">\(\lim\limits_{n \to \infty} a_n = 0\)</span></p>
+</div>
+<div class="proof">
+<p>Запишем по определению, что <span class="math inline">\(\lim\limits_{n \to \infty} b_n = 0\)</span>. <span class="math display">\[\forall \varepsilon \; \exists N \; \forall n &gt; N \; |b_n - 0| &lt; \varepsilon\]</span> Уберем 0 <span class="math display">\[\forall \varepsilon \; \exists N \; \forall n &gt; N \; |b_n| &lt; \varepsilon\]</span> Теперь добавим к этому, что <span class="math inline">\(|a_n| \le |b_n|\)</span>… <span class="math display">\[\forall \varepsilon \; \exists N \; \forall n &gt; N \; |a_n| \le |b_n| &lt; \varepsilon\]</span> …и уберем <span class="math inline">\(|b_n|\)</span> <span class="math display">\[\forall \varepsilon \; \exists N \; \forall n &gt; N \; |a_n| &lt; \varepsilon\]</span> Неожиданно мы получили ровно определение, что <span class="math inline">\(\lim\limits_{n \to \infty} a_n = 0\)</span></p>
+<p>Что и требовалось доказать</p>
+<hr />
+<p>Если на нормальном языке, то у нас есть последовательность <span class="math inline">\(b_n\)</span>, которая начиная с некоторого момента будет близко к <span class="math inline">\(0\)</span>. А <span class="math inline">\(a_n\)</span> меньше чем <span class="math inline">\(b_n\)</span>, то есть еще ближе к <span class="math inline">\(0\)</span>. Значит она тем более стремится к <span class="math inline">\(0\)</span>.</p>
+</div>
 <h1 id="section">4</h1>
 <p>Определение, что <span class="math inline">\(\lim\limits_{n \to \infty} a_n = A\)</span>: <span class="math display">\[ \forall \varepsilon \; \exists N \; \forall n &gt; N \; |a_n - A| &lt; \varepsilon\]</span></p>
 <p>По определению предела доказать, что <span class="math inline">\(\lim\limits_{n \to \infty} \frac{1}{n^2} = 0\)</span></p>
@@ -331,7 +359,7 @@
 <p>Нам надо доказать, что <span class="math inline">\(\forall \varepsilon \; \exists N \; \forall n &gt; N \; |\frac{1}{n^2} - 0| &lt; \varepsilon\)</span></p>
 <p>Возьмем и просто найдем это <span class="math inline">\(N\)</span>.</p>
 <p>Наша последовательность убывает, так что если мы найдем какой-то <span class="math inline">\(N\)</span>, меньший <span class="math inline">\(\varepsilon\)</span>, все следующие автоматически будут меньше.</p>
-<p>Осталось для любого <span class="math inline">\(\varepsilon\)</span> уметь находить <span class="math inline">\(N\)</span>, что |<span class="math inline">\(\frac{1}{N^2}| &lt; \varepsilon\)</span>.</p>
+<p>Осталось для любого <span class="math inline">\(\varepsilon\)</span> уметь находить <span class="math inline">\(N\)</span>, что |<span class="math inline">\(\frac{1}{N^2}| &lt; \frac{1}{n} &lt; \varepsilon\)</span>.</p>
 <p>Кажется <span class="math inline">\(N = \sqrt{\frac{1}{\varepsilon}}\)</span> довольно неплохо подходит - если мы его подставим, то мы получим число, меньшее <span class="math inline">\(\varepsilon\)</span>, а все следующие будут еще меньше, потому что последовательность убывает.</p>
 </div>
 <p>По определению предела доказать, что <span class="math inline">\(\lim\limits_{n \to \infty} \frac{3^{n+1} - 1}{3^n} = 3\)</span></p>
@@ -341,19 +369,32 @@
 <p>Преобразуем выражение</p>
 <p><span class="math display">\[ |\frac{3^{n+1} - 1}{3^n} - 3| = |3 - \frac{1}{3^n} - 3| = |\frac{1}{3^n}| \]</span></p>
 <p>Осталось найти <span class="math inline">\(N\)</span>, начиная с которого для всех <span class="math inline">\(n\)</span> будет выполнено <span class="math inline">\(|\frac{1}{3^n}| &lt; \varepsilon\)</span></p>
-<p>Опять последовательность убывает, так что если мы найдем какой-то <span class="math inline">\(N\)</span>, меньший <span class="math inline">\(\varepsilon\)</span>, все следующие автоматически будут меньше.</p>
+<p>Опять <span class="math inline">\(\frac{1}{3^n}\)</span> убывает, так что если мы найдем какой-то <span class="math inline">\(N\)</span>, меньший <span class="math inline">\(\varepsilon\)</span>, все следующие автоматически будут меньше.</p>
 <p>Осталось для любого <span class="math inline">\(\varepsilon\)</span> уметь находить <span class="math inline">\(N\)</span>, что |<span class="math inline">\(\frac{1}{3^N}| &lt; \varepsilon\)</span>.</p>
-<p>Кажется это <span class="math inline">\(N = \log_3{\frac{1}{\varepsilon}}\)</span> - если мы его подставим, то мы получим число, меньшее <span class="math inline">\(\varepsilon\)</span>, а все следующие будут еще меньше, потому что последовательность убывает.</p>
+<blockquote>
+<p>Заметим, что <span class="math inline">\(3^N \ge N\)</span>, значит <span class="math inline">\(\frac{1}{3^N} \le \frac{1}{N}\)</span> (да, это опять с потолка)</p>
+</blockquote>
+<p>Кажется подходит <span class="math inline">\(N = \frac{1}{\varepsilon}\)</span>. Подставим его, получим <span class="math inline">\(\frac{1}{3^N} \le \frac{1}{N} = \frac{1}{\frac{1}{\varepsilon}} = \varepsilon\)</span>. То есть для <span class="math inline">\(N = \frac{1}{\varepsilon}\)</span> неравенство <span class="math inline">\(\frac{1}{3^N} \le \varepsilon\)</span> выполнено. А все следующие <span class="math inline">\(\frac{1}{3^{N+1}}, \frac{1}{3^{N+2}}, \frac{1}{3^{N+3}}, \cdots\)</span> будут меньше, потому что последовательность убывает.</p>
 </div>
 <h1 id="section-1">5</h1>
 <p>Найти предел <span class="math inline">\(\sqrt{n + 1} - \sqrt{n - 1}\)</span>. Верь, это <span class="math inline">\(0\)</span>.</p>
 <p>Снова преобразуем:</p>
 <p><span class="math display">\[\sqrt{n + 1} - \sqrt{n - 1} = 
 \frac{(\sqrt{n + 1} - \sqrt{n - 1}) (\sqrt{n + 1} + \sqrt{n - 1})}
-{\sqrt{n + 1} + \sqrt{n - 1}} = \]</span> <span class="math display">\[ = \frac{(n + 1) - (n - 1)}{\sqrt{n + 1} + \sqrt{n - 1}} = \frac{2}{\sqrt{n + 1} + \sqrt{n - 1}} \le\]</span> <span class="math display">\[ \le \frac{2}{\frac{1}{2}\sqrt{n} + \frac{1}{2}\sqrt{n}} = \frac{2}{\sqrt{n}}\]</span></p>
-<p>То есть <span class="math inline">\(\sqrt{n + 1} - \sqrt{n - 1} \le \frac{2}{\sqrt{n}}\)</span>. Но <span class="math inline">\(\frac{2}{\sqrt{n}} \to 0\)</span>, значит <span class="math inline">\(\sqrt{n + 1} - \sqrt{n - 1} \to 0\)</span> тоже.</p>
+{\sqrt{n + 1} + \sqrt{n - 1}} = \]</span> <span class="math display">\[ = \frac{(n + 1) - (n - 1)}{\sqrt{n + 1} + \sqrt{n - 1}} = \frac{2}{\sqrt{n + 1} + \sqrt{n - 1}} \]</span></p>
+<blockquote>
+<p>Заметим, что <span class="math inline">\(\sqrt{n+1} + \sqrt{n-1}\)</span> это примерно <span class="math inline">\(2\sqrt{n}\)</span> и оно <span class="math inline">\(\ge \sqrt{n}\)</span></p>
+<p>Значит <span class="math inline">\(\frac{1}{\sqrt{n+1} + \sqrt{n-1}} \le \frac{1}{\sqrt{n}}\)</span></p>
+</blockquote>
+<p><span class="math display">\[ \frac{2}{\sqrt{n + 1} + \sqrt{n - 1}}\le  \frac{2}{\sqrt{n}}\]</span></p>
+<p>То есть <span class="math inline">\(\frac{2}{\sqrt{n + 1} - \sqrt{n - 1}} \le \frac{2}{\sqrt{n}}\)</span>. Но <span class="math inline">\(\frac{2}{\sqrt{n}} \to 0\)</span>, значит <span class="math inline">\(\frac{2}{\sqrt{n + 1} - \sqrt{n - 1}} \to 0\)</span> тоже. (смотри теорему в самом начале)</p>
 <hr />
 <p>Найти предел <span class="math inline">\(\frac{4n + 1}{4n! + (n - 1)!}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(4n + 1 \le 8n\)</span></p></li>
+<li><p><span class="math inline">\(4n! + (n-1)! \ge n^2\)</span> - (я верю…), значит <span class="math inline">\(\frac{1}{4n! + (n-1)!} \le \frac{1}{n^2}\)</span></p></li>
+</ul>
+<p>Отсюда получаем <span class="math inline">\(\frac{4n + 1}{4n! + (n - 1)!} \le \frac{8n}{4n! + (n - 1)!} \le \frac{8n}{n^2} = \frac{8}{n} \to 0\)</span>, значит <span class="math inline">\(\frac{4n + 1}{4n! + (n - 1)!} \to 0\)</span></p>
 <h1 id="section-2">6</h1>
 <p>Сумма ряда <span class="math inline">\(\sum \frac{(-1)^n}{3^n} = \sum (\frac{-1}{3})^n\)</span>.</p>
 <p>Это убывающая геометрическая прогрессия.</p>
@@ -364,7 +405,7 @@
 </div>
 <p><span class="math inline">\(\sum (1 + \frac{1}{n})^{n^2}\)</span></p>
 <div class="proof">
-<p><span class="math display">\[a_n = (1 + \frac{1}{n})^{n^2}\]</span> <span class="math display">\[\sqrt[n] {a_n} = (1 + \frac{1}{n})^n\]</span> Этот ряд сходится к числу <span class="math inline">\(e = 2.71...\)</span>, но кажется с вашим определением достаточно сказать, что оно больше 1. Как оказалось, про этот ряд было на лекции, так что ты можешь сказать, что он сходится к <span class="math inline">\(e\)</span></p>
+<p><span class="math display">\[a_n = (1 + \frac{1}{n})^{n^2}\]</span> <span class="math display">\[\sqrt[n] {a_n} = (1 + \frac{1}{n})^n\]</span> Этот ряд сходится к числу <span class="math inline">\(e = 2.71...\)</span>, как оказалось, про этот ряд было на лекции, так что ты можешь сказать, что корень сходится к <span class="math inline">\(e &gt; 1\)</span>, значит ряд расходится</p>
 </div>
 <h1 id="даламбер">9 Даламбер</h1>
 <p><span class="math inline">\(\sum \frac{n + 1}{n!}\)</span></p>
@@ -377,8 +418,8 @@
 <div class="proof">
 <p><span class="math display">\[a_n = \frac{5^n}{n^5}\]</span> <span class="math display">\[\frac{a_{n+1}}{a_{n}} = \frac{\frac{5^{n+1}}{(n+1)^5} }{\frac{5^n}{n^5} } = 
 \frac{5^{n+1}n^5}{5^n(n+1)^5} = 
-5 (\frac{n}{n+1})^5 \ge 5\]</span></p>
-<p>Значит расходится</p>
+5 (\frac{n}{n+1})^5\]</span></p>
+<p>Давай еще раз поверим, что <span class="math inline">\((\frac{n}{n+1})^5\)</span> стремится к 1 и <span class="math inline">\(5 (\frac{n}{n+1})^5\)</span> стремится к <span class="math inline">\(5\)</span>, значит ряд расходится</p>
 </div>
 <h1 id="section-3">10</h1>
 <table>
