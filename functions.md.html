@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>functions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style>
+  @font-face {
+      font-family: "main-font";
+      src: url("/home/nikita/bin/sh/md/light-font.otf") format("opentype");
+  }
+
+  pre,
+  code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+
+  pre {
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: auto;
+  }
+
+  p {
+    margin-left: 5%;
+  }
+
+
+  @media print {
+    *,
+    *:before,
+    *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+
+  a,
+  a:visited {
+    color: #01ff70;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: #2ecc40;
+  }
+
+  .retro-no-decoration {
+    text-decoration: none;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  body {
+    line-height: 1.85;
+  }
+
+  p,
+  .retro-p {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+  }
+
+  h1,
+  .retro-h1,
+  h2,
+  .retro-h2,
+  h3,
+  .retro-h3,
+  h4,
+  .retro-h4 {
+    margin: 1.414rem 0 .5rem;
+    font-weight: inherit;
+    line-height: 1.42;
+  }
+
+  h1,
+  .retro-h1 {
+    margin-top: 0;
+    font-size: 3.998rem;
+  }
+
+  h2,
+  .retro-h2 {
+    font-size: 2.827rem;
+  }
+
+  h3,
+  .retro-h3 {
+    font-size: 1.999rem;
+  }
+
+  h4,
+  .retro-h4 {
+    font-size: 1.414rem;
+  }
+
+  h5,
+  .retro-h5 {
+    font-size: 1.121rem;
+  }
+
+  h6,
+  .retro-h6 {
+    font-size: .88rem;
+  }
+
+  small,
+  .retro-small {
+    font-size: .707em;
+  }
+
+  /* https://github.com/mrmrs/fluidity */
+
+  img,
+  canvas,
+  iframe,
+  video,
+  svg,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  html,
+  body {
+    font-family: "main-font"
+    background-color: #eee;
+    min-height: 100%;
+  }
+
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    color: #111;
+    /*font-family: "Courier New";*/
+    line-height: 1.45;
+    margin: 6rem auto 1rem;
+    max-width: 48rem;
+    padding: .25rem;
+  }
+
+  pre {
+    background-color: #bbb;
+  }
+
+  blockquote {
+    border-left: 3px solid #01ff70;
+    padding-left: 1rem;
+  }
+
+  dl {
+    border: solid 2px gray;
+    border-radius: 5px;
+  }
+
+  dt {
+    padding: 5px;
+    /*background: gray;*/
+    border-bottom: solid 2px gray;
+  }
+
+  dt::before {
+    content: "Def: ";
+  }
+
+  dd {
+    margin-left: 40px;
+    padding-left: 1rem;
+  }
+
+  .nb::before {
+    content: "NB";
+    padding: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    background: gray;
+    color: lightgray;
+    /*border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;*/
+  }
+
+  .nb {
+    /*border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;*/
+    border: 1px solid gray;
+    border-radius: 5px;
+    /*margin-left: 40px;
+    padding-left: 1rem;
+    color: #221e1c;*/
+    /*background: #403b38;*/
+    padding: 2px;
+    padding-left: 0;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+
+  .let::before {
+    content: "Пусть ";
+  }
+
+  .let {
+    border-top: 2px solid #635c57;
+    border-left: 2px solid #635c57;
+    border-bottom: 2px dotted #635c57;
+    margin-left: 40px;
+    padding-left: 1rem;
+  }
+
+  .then::before {
+    content: "Тогда ";
+  }
+
+  .then {
+    border-bottom: 2px dotted #635c57;
+    border-left: 2px solid #635c57;
+    margin-left: 40px;
+    padding-left: 1rem;
+  }
+
+  .proof::before {
+    content: "Доказательство:";
+  }
+
+  .proof {
+    border-left: 1px solid #635c57;
+    border-bottom: 1px solid #635c57;
+    margin-left: 40px;
+    padding-left: 1rem;
+  }
+
+  .note {
+    border-left: 3px solid #635c57;
+    margin-left: 40px;
+    padding-left: 1rem;
+    color: #635c57;
+  }
+  </style>
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'all',
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h3 id="fx-sqrt1-x2">1. <span class="math inline">\(f(x) = \sqrt{1 + x^2}\)</span></h3>
+<ol type="1">
+<li><p><span class="math inline">\(f(0) = \sqrt{1 + 0^2} = \sqrt{1} = 1\)</span></p></li>
+<li><p><span class="math inline">\(f(x^2) = \sqrt{1 + (x^2)^2} = \sqrt{1 + x^4}\)</span></p></li>
+<li><p><span class="math inline">\(f(-x) = \sqrt{1 + (-x)^2} = \sqrt{1 + x^2}\)</span></p></li>
+<li><p><span class="math inline">\(f(\frac{1}{x}) = \sqrt{1 + (\frac{1}{x})^2}\)</span></p></li>
+<li><p><span class="math inline">\(\frac{1}{f(x)} = \frac{1}{\sqrt{1 + x^2}}\)</span></p></li>
+<li><p><span class="math inline">\(f(a) + 1 = \sqrt{1 + a^2} + 1\)</span></p></li>
+</ol>
+<h3 id="область-определения-при-каких-x-имеет-смысл-выражение">2. Область определения (при каких <span class="math inline">\(x\)</span> имеет смысл выражение)</h3>
+<h4 id="y-frac3x1x2-1"><span class="math inline">\(y = \frac{3x+1}{x^2-1}\)</span></h4>
+<p>Единственное условие - знаменатель не равен <span class="math inline">\(0\)</span>. <span class="math display">\[x^2 - 1 \neq 0 \Leftrightarrow x \neq \pm 1\]</span> Область определения - любой <span class="math inline">\(x\)</span> кроме <span class="math inline">\(\pm 1\)</span></p>
+<h4 id="y-fraclnxsqrtx2---2"><span class="math inline">\(y = \frac{\ln(x)}{\sqrt{|x^2 - 2|}}\)</span></h4>
+<p>Ограничения:</p>
+<ol type="1">
+<li><p>Выражение под корнем больше или равно 0</p></li>
+<li><p>Знаменатель не равен <span class="math inline">\(0\)</span></p></li>
+<li><p>Аргумент логарифма больше <span class="math inline">\(0\)</span></p></li>
+</ol>
+<p>Считаем:</p>
+<ol type="1">
+<li><p><span class="math inline">\(|x^2 - 2| \ge 0\)</span> выполнено всегда</p></li>
+<li><p>Знаменатель <span class="math display">\[\begin{align}
+&amp; \sqrt{|x^2 - 2|} \neq 0 \\
+&amp; |x^2 - 2| \neq 0 \\
+&amp; x^2 - 2 \neq 0 \\
+&amp; x \neq \pm \sqrt{2}
+  \end{align}\]</span></p></li>
+<li><p>Логарифм: <span class="math inline">\(x &gt; 0\)</span></p></li>
+</ol>
+<p>В итоге получаем, <span class="math inline">\(x &gt; 0\)</span> и <span class="math inline">\(x \neq \sqrt{2}\)</span></p>
+<h4 id="y-sqrt-x-tanx"><span class="math inline">\(y = \sqrt{-x} + \tan(x)\)</span></h4>
+<ol type="1">
+<li><p>Выражение под корнем должно быть неотрицательным</p></li>
+<li><p>Аргумент тангенса не должен быть равен <span class="math inline">\(\frac{\pi}{2} + \pi n, n \in \mathbb{Z}\)</span></p></li>
+</ol>
+<p>Считаем:</p>
+<ol type="1">
+<li><p>Корень <span class="math display">\[\begin{align}
+  &amp; -x \ge 0 \\
+  &amp; x \le 0
+\end{align}\]</span></p></li>
+<li><p>Тангенс: <span class="math inline">\(x \neq \frac{\pi}{2} + \pi n, n \in \mathbb{Z}\)</span></p></li>
+</ol>
+<p>В итоге <span class="math inline">\(x \neq \frac{\pi}{2} + \pi n, n = -1, -2, \dots\)</span></p>
+<h4 id="y-arccos-frac2x1-x"><span class="math inline">\(y = \arccos \frac{2x}{1 + x}\)</span></h4>
+<ol type="1">
+<li><p>Аргумент арккосинуса должен быть от <span class="math inline">\(-1\)</span> до <span class="math inline">\(1\)</span></p></li>
+<li><p>Знаменатель не должен быть равен <span class="math inline">\(0\)</span></p></li>
+</ol>
+<p>Считаем:</p>
+<ol type="1">
+<li><span class="math display">\[\begin{align}
+  &amp; -1 \le \frac{2x}{1 + x} и \frac{2x}{1 + x} \le 1 \\
+  &amp; 0 \le \frac{3x + 1}{1 + x} и \frac{x - 1}{1 + x} \le 0 \\
+\end{align}\]</span> Хотим числитель и знаменатель одного знака в первом случае и разных во втором.</li>
+</ol>
+<p>В первом случае это получается при <span class="math inline">\(x \ge -\frac{1}{3}\)</span> (оба положительны) или <span class="math inline">\(x \le -1\)</span> (оба отрицательны). Во втором при <span class="math inline">\(-1 \le x \le 1\)</span></p>
+<p>Оба условия выполняются при <span class="math inline">\(x = -1, -\frac{1}{3} \le x \le 1\)</span></p>
+<ol start="2" type="1">
+<li>Можно было отсечь в прошлом пункте, <span class="math inline">\(x \neq -1\)</span>, так как знаменатель обращается в 0.</li>
+</ol>
+<p>В итоге <span class="math inline">\(-\frac{1}{3} \le x \le 1\)</span></p>
+<h3 id="область-значения-какие-y-могут-быть">Область значения (какие y могут быть)</h3>
+<h4 id="y-x2---8x-20"><span class="math inline">\(y = x^2 - 8x + 20\)</span></h4>
+<p>Преобразуем:</p>
+<p><span class="math display">\[y = x^2 - 8x + 20 = x^2 - 2 \cdot 4 \cdot x + 4^2 + 4 = 
+(x - 4)^2 + 4\]</span></p>
+<p>Так как <span class="math inline">\((x - 4)^2\)</span> принимает значение от <span class="math inline">\(0\)</span> до <span class="math inline">\(\infty\)</span>, <span class="math inline">\(y\)</span> принимает значения от <span class="math inline">\(4\)</span> до <span class="math inline">\(\infty\)</span></p>
+<h4 id="y-frac1x-4"><span class="math inline">\(y = \frac{1}{x} + 4\)</span></h4>
+<p><span class="math inline">\(\frac{1}{x}\)</span> принимает все значения кроме <span class="math inline">\(0\)</span>, значит <span class="math inline">\(y\)</span> принимает все значения кроме <span class="math inline">\(4\)</span>.</p>
+<h4 id="y-2-sin-x---7"><span class="math inline">\(y = 2 \sin x - 7\)</span></h4>
+<p><span class="math display">\[\begin{align}
+&amp; -1 \le \sin x \le 1 \\
+&amp; -2 \le 2 \sin x \le 2 \\
+&amp; -9 \le 2 \sin x - 7 \le -5 
+\end{align}\]</span></p>
+<h4 id="y-arcsin-fracx2-12x"><span class="math inline">\(y = \arcsin \frac{x^2 + 1}{2x}\)</span></h4>
+<p>Давайте посмотрим, при каких <span class="math inline">\(x\)</span> эта функция существует.</p>
+<p><span class="math display">\[\begin{align}
+&amp; -1 \le \frac{x^2 + 1}{2x} и \frac{x^2 + 1}{2x} \le 1 \\
+&amp; 0 \le \frac{x^2 + 2x + 1}{2x} и \frac{x^2 - 2x + 1}{2x} \le 0 \\
+&amp; 0 \le \frac{(x + 1)^2}{2x} и \frac{(x - 1)^2}{2x} \le 0 \\
+\end{align}\]</span> Первое выполнено при <span class="math inline">\(x = -1, x \ge 0\)</span>, второе при <span class="math inline">\(x = 1, x \le 0\)</span>, а также <span class="math inline">\(x \neq 0\)</span> из-за знаменателя. Получаем что функция вообще существует только при <span class="math inline">\(x = \pm 1\)</span>, отсюда просто подставив получим чему может быть равен <span class="math inline">\(y\)</span>: <span class="math inline">\(\arcsin \frac{(1^2) + 1}{2 \cdot 1} = \arcsin 1 = \frac{\pi}{2}\)</span>, <span class="math inline">\(\arcsin \frac{((-1)^2) + 1}{2 \cdot (-1)} = \arcsin -1 = -\frac{\pi}{2}\)</span>.</p>
+<h3 id="section">4</h3>
+<h3 id="обратные-g-обратна-к-f-если-gfx-x">5 Обратные, <span class="math inline">\(g\)</span> обратна к <span class="math inline">\(f\)</span> если <span class="math inline">\(g(f(x)) = x\)</span></h3>
+<p>Чтобы их найти достаточно выразить <span class="math inline">\(x\)</span> из <span class="math inline">\(y = f(x)\)</span>.</p>
+<h4 id="fx-sqrtx"><span class="math inline">\(f(x) = \sqrt{x}\)</span></h4>
+<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \sqrt{x}\)</span>. <span class="math inline">\(x = y^2\)</span></p>
+<p>Значит обратная функция <span class="math inline">\(g(x) = x^2\)</span>, проверим: <span class="math inline">\(g(f(x)) = (\sqrt{x})^2 = x\)</span></p>
+<h4 id="fx-frac2x-3"><span class="math inline">\(f(x) = \frac{2}{x + 3}\)</span></h4>
+<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \frac{2}{x + 3}\)</span>. <span class="math inline">\(x = \frac{2}{y} - 3\)</span>.</p>
+<p>Проверка аналогична</p>
+<h4 id="fx-arctanln-3x"><span class="math inline">\(f(x) = \arctan(\ln 3x)\)</span></h4>
+<p>Аналогично <span class="math display">\[\begin{align}
+  &amp; y = \arctan(\ln 3x) \\
+  &amp; \tan y = \ln 3x \\
+  &amp; e^{\tan y} = 3x \\
+  &amp; \frac{e^{\tan y}}{3} = x 
+\end{align}\]</span></p>
+<h3 id="коши">6. Коши</h3>
+<p>Надо для любого <span class="math inline">\(\varepsilon\)</span> уметь находить область (=окрестность) вокруг <span class="math inline">\(x_0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|f(x) - A| &lt; \varepsilon\)</span>.</p>
+<p>Также как с пределами, научимся получать по <span class="math inline">\(\varepsilon\)</span> эту окрестность.</p>
+<p>В данном случае <span class="math inline">\(x_0 = 0\)</span>, <span class="math inline">\(f(x) = |x|\)</span>, <span class="math inline">\(A = 0\)</span>.</p>
+<p>Тогда надо по <span class="math inline">\(\varepsilon\)</span> находить область вокруг <span class="math inline">\(x_0 = 0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span>.</p>
+<p><span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span> это <span class="math inline">\(|x| &lt; \varepsilon\)</span>. Если теперь взять отрезок <span class="math inline">\((-\varepsilon; \varepsilon)\)</span>, то это будет окрестность точки <span class="math inline">\(x_0 = 0\)</span>, для каждого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|x| &lt; \varepsilon\)</span></p>
+</body>
+</html>
