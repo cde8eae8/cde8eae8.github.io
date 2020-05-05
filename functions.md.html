@@ -443,5 +443,49 @@
 <p>В данном случае <span class="math inline">\(x_0 = 0\)</span>, <span class="math inline">\(f(x) = |x|\)</span>, <span class="math inline">\(A = 0\)</span>.</p>
 <p>Тогда надо по <span class="math inline">\(\varepsilon\)</span> находить область вокруг <span class="math inline">\(x_0 = 0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span>.</p>
 <p><span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span> это <span class="math inline">\(|x| &lt; \varepsilon\)</span>. Если теперь взять отрезок <span class="math inline">\((-\varepsilon; \varepsilon)\)</span>, то это будет окрестность точки <span class="math inline">\(x_0 = 0\)</span>, для каждого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|x| &lt; \varepsilon\)</span></p>
+<h3 id="предел">7. Предел</h3>
+<h3 id="разложения">8. Разложения</h3>
+<p>Знаем, что <span class="math display">\[ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \dots = 
+\sum_{i = 0}^{\infty} \frac{x^i}{i!} \]</span> Хотим <span class="math inline">\(\frac{e^x + e^{-x}}{2}\)</span>.</p>
+<p>Подставив <span class="math inline">\(-x\)</span> получаем <span class="math display">\[ e^{-x} = 
+1 + \frac{-x}{1!} + \frac{(-x)^2}{2!} + \frac{(-x)^3}{3!} + \dots = 
+1 - \frac{x}{1!} + \frac{x^2}{2!} - \frac{x^3}{3!} + \dots = 
+\sum_{i = 0}^{\infty} \frac{(-1)^i x^i}{i!} \]</span></p>
+<p>Это то же разложение <span class="math inline">\(e^x\)</span>, только теперь слагаемые на нечетных местах с минусом.</p>
+<p>Найдем <span class="math inline">\(e^x + e^{-x}\)</span>. <span class="math display">\[e^x + e^{-x} =
+\sum_{i = 0}^{\infty} (\frac{x^i}{i!} + \frac{(-1)^i x^i}{i!})
+\]</span></p>
+<p>На нечетных индексах получим разность одинаковых слагаемых, на четных сумму одинаковых слагаемых. В итоге <span class="math display">\[
+\sum_{i = 0}^{\infty} (\frac{x^i}{i!} + \frac{(-1)^i x^i}{i!}) =
+\sum_{i - четный, i \ge 0}^{\infty} 2\frac{x^i}{i!} =
+\sum_{k = 1}^{\infty} 2\frac{x^{2k}}{(2k)!}\]</span></p>
+<p>После деления на <span class="math inline">\(2\)</span> получим</p>
+<p><span class="math display">\[
+\sinh{x} = 
+\frac{e^x + e^{-x}}{2} =  
+\sum_{k = 0}^{\infty} \frac{x^{2k}}{(2k)!}
+\]</span></p>
+<p>Аналогично <span class="math display">\[
+\cosh{x} = 
+\frac{e^x - e^{-x}}{2} =  
+\sum_{k = 0}^{\infty} \frac{x^{2k+1}}{(2k+1)!}
+\]</span></p>
+<h3 id="разложить-frac1x-sin-x2">Разложить <span class="math inline">\(\frac{1}{x} \sin x^2\)</span></h3>
+<p><span class="math display">\[
+\sin x = 
+\frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots
+\]</span></p>
+<p><span class="math display">\[
+\sin x^2 = 
+\frac{x^2}{1!} - \frac{x^6}{3!} + \frac{x^{10}}{5!} + \dots
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{x} \sin x^2 = 
+\frac{x}{1!} - \frac{x^5}{3!} + \frac{x^{9}}{5!} + \dots
+\]</span></p>
+<p>Нам надо до <span class="math inline">\(x^5\)</span>, тогда <span class="math display">\[
+\frac{1}{x} \sin x^2 = 
+\frac{x}{1!} - \frac{x^5}{3!}
+\]</span></p>
 </body>
 </html>
