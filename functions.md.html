@@ -467,7 +467,14 @@
 <p>Поэтому сначала можно попробовать сократить дробь. <span class="math display">\[ \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{(x - 2)(x + 2)}{(x - 3)(x - 2)} = \frac{x + 2}{x - 3}\]</span></p>
 <p>А теперь и под предел можно: <span class="math display">\[ \lim_{x \to 2} \frac{x + 2}{x - 3} = \frac{2 + 2}{2 - 3} = -4 \]</span></p>
 <blockquote>
-<p>Почему <span class="math inline">\(x^2 - 5x + 6 = (x - 3)(x + 2)\)</span>: <span class="math display">\[x^2 - 5x + 6 = x^2 - 5x + 25 - 25 + 6 = \]</span></p>
+<h6 id="почему-x2---5x-6-x---3x---2">Почему <span class="math inline">\(x^2 - 5x + 6 = (x - 3)(x - 2)\)</span>:</h6>
+<p>Формула корней квадратного уравнения <span class="math inline">\(ax^2 + bx + c = 0\)</span>: <span class="math display">\[ x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</span> По формуле находишь корни уравнения, потом подставляешь корни в формулу <span class="math inline">\(a(x - x_1)(x - x_2)\)</span> вместо <span class="math inline">\(x_1\)</span> и <span class="math inline">\(x_2\)</span>.</p>
+<p><span class="math inline">\(x^2 - 5x + 6\)</span>: <span class="math inline">\(a = 1\)</span>, <span class="math inline">\(b = -5\)</span>, <span class="math inline">\(c = 6\)</span>. Найдем корни: <span class="math display">\[ 
+\frac{-(-5) \pm \sqrt{(-5)^2 - 4 \cdot 1 \cdot 6}}{2 \cdot 1} = 
+\frac{5 \pm \sqrt{25 - 24}}{2} = 
+\frac{5 \pm 1}{2}.
+\]</span> То есть первый корень это <span class="math inline">\(x_1 = \frac{5 + 1}{2} = 3\)</span>, второй - <span class="math inline">\(x_2 = \frac{5 - 1}{2} = 2\)</span>.</p>
+<p>Подставим в формулу <span class="math inline">\(a(x - x_1)(x - x_2)\)</span>, получим <span class="math inline">\(1 \cdot (x - 3)(x - 2) = (x - 3)(x - 2)\)</span>.</p>
 </blockquote>
 <h3 id="разложения">8. Разложения</h3>
 <p>Знаем, что <span class="math display">\[ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \dots = 
