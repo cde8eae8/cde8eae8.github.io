@@ -421,14 +421,20 @@
 &amp; 0 \le \frac{x^2 + 2x + 1}{2x} и \frac{x^2 - 2x + 1}{2x} \le 0 \\
 &amp; 0 \le \frac{(x + 1)^2}{2x} и \frac{(x - 1)^2}{2x} \le 0 \\
 \end{align}\]</span> Первое выполнено при <span class="math inline">\(x = -1, x \ge 0\)</span>, второе при <span class="math inline">\(x = 1, x \le 0\)</span>, а также <span class="math inline">\(x \neq 0\)</span> из-за знаменателя. Получаем что функция вообще существует только при <span class="math inline">\(x = \pm 1\)</span>, отсюда просто подставив получим чему может быть равен <span class="math inline">\(y\)</span>: <span class="math inline">\(\arcsin \frac{(1^2) + 1}{2 \cdot 1} = \arcsin 1 = \frac{\pi}{2}\)</span>, <span class="math inline">\(\arcsin \frac{((-1)^2) + 1}{2 \cdot (-1)} = \arcsin -1 = -\frac{\pi}{2}\)</span>.</p>
-<h3 id="section">4</h3>
+<h3 id="fx-sqrtx-gx-x2-yx-ex">4 <span class="math inline">\(f(x) = \sqrt{x}, g(x) = x^2, y(x) = e^x\)</span></h3>
+<p><span class="math display">\[\begin{align}
+&amp; f \circ g = f(g(x)) = \sqrt{g(x)} = \sqrt{x^2} = |x| \\
+&amp; g \circ f = g(f(x)) = (f(x))^2 = (\sqrt{x})^2 = x, x \ge 0 \\
+&amp; f \circ f = f(f(x)) = \sqrt{f(x)} = \sqrt{\sqrt{x}} = \sqrt[4]{x} \\
+&amp; f \circ g \circ y = f(g(y(x))) = \sqrt{g(y(x))} = \sqrt{(y(x))^2} = \sqrt{(e^x)^2} = e^x\\
+\end{align}\]</span></p>
 <h3 id="обратные-g-обратна-к-f-если-gfx-x">5 Обратные, <span class="math inline">\(g\)</span> обратна к <span class="math inline">\(f\)</span> если <span class="math inline">\(g(f(x)) = x\)</span></h3>
 <p>Чтобы их найти достаточно выразить <span class="math inline">\(x\)</span> из <span class="math inline">\(y = f(x)\)</span>.</p>
 <h4 id="fx-sqrtx"><span class="math inline">\(f(x) = \sqrt{x}\)</span></h4>
-<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \sqrt{x}\)</span>. <span class="math inline">\(x = y^2\)</span></p>
+<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \sqrt{x}\)</span>. Получим <span class="math inline">\(x = y^2\)</span></p>
 <p>Значит обратная функция <span class="math inline">\(g(x) = x^2\)</span>, проверим: <span class="math inline">\(g(f(x)) = (\sqrt{x})^2 = x\)</span></p>
 <h4 id="fx-frac2x-3"><span class="math inline">\(f(x) = \frac{2}{x + 3}\)</span></h4>
-<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \frac{2}{x + 3}\)</span>. <span class="math inline">\(x = \frac{2}{y} - 3\)</span>.</p>
+<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \frac{2}{x + 3}\)</span>. Получим <span class="math inline">\(x = \frac{2}{y} - 3\)</span>.</p>
 <p>Проверка аналогична</p>
 <h4 id="fx-arctanln-3x"><span class="math inline">\(f(x) = \arctan(\ln 3x)\)</span></h4>
 <p>Аналогично <span class="math display">\[\begin{align}
@@ -444,6 +450,13 @@
 <p>Тогда надо по <span class="math inline">\(\varepsilon\)</span> находить область вокруг <span class="math inline">\(x_0 = 0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span>.</p>
 <p><span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span> это <span class="math inline">\(|x| &lt; \varepsilon\)</span>. Если теперь взять отрезок <span class="math inline">\((-\varepsilon; \varepsilon)\)</span>, то это будет окрестность точки <span class="math inline">\(x_0 = 0\)</span>, для каждого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|x| &lt; \varepsilon\)</span></p>
 <h3 id="предел">7. Предел</h3>
+<p>В первом можно просто подставить и получить ответ: <span class="math display">\[ \lim_{x \to 3} \frac{x - 3}{2x + 5} = \frac{3 - 3}{6 + 5} = \frac{0}{11} = 0\]</span></p>
+<p>Во втором если так сделать, мы получим деление 0 на 0, что не очень хорошо: <span class="math display">\[ \lim_{x \to 2} \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{2^2 - 4}{2^2 - 5 \cdot 2 + 6} = \frac{0}{0} = 0\]</span></p>
+<p>Поэтому сначала можно попробовать сократить дробь. <span class="math display">\[ \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{(x - 2)(x + 2)}{(x - 3)(x - 2)} = \frac{x + 2}{x - 3}\]</span></p>
+<p>А теперь и под предел можно: <span class="math display">\[ \lim_{x \to 2} \frac{x + 2}{x - 3} = \frac{2 + 2}{2 - 3} = -4 \]</span></p>
+<blockquote>
+<p>Почему <span class="math inline">\(x^2 - 5x + 6 = (x - 3)(x + 2)\)</span>: <span class="math display">\[x^2 - 5x + 6 = x^2 - 5x + 25 - 25 + 6 = \]</span></p>
+</blockquote>
 <h3 id="разложения">8. Разложения</h3>
 <p>Знаем, что <span class="math display">\[ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \dots = 
 \sum_{i = 0}^{\infty} \frac{x^i}{i!} \]</span> Хотим <span class="math inline">\(\frac{e^x + e^{-x}}{2}\)</span>.</p>
