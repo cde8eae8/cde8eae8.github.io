@@ -435,23 +435,35 @@
 <p>Значит обратная функция <span class="math inline">\(g(x) = x^2\)</span>, проверим: <span class="math inline">\(g(f(x)) = (\sqrt{x})^2 = x\)</span></p>
 <h4 id="fx-frac2x-3"><span class="math inline">\(f(x) = \frac{2}{x + 3}\)</span></h4>
 <p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \frac{2}{x + 3}\)</span>. Получим <span class="math inline">\(x = \frac{2}{y} - 3\)</span>.</p>
-<p>Проверка аналогична</p>
+<p><span class="math display">\[g(x) = \frac{2}{y} - 3\]</span></p>
+<p>Проверка аналогична:</p>
+<p><span class="math display">\[ g(f(x)) = \frac{2}{f(x)} - 3 = \frac{2}{\frac{2}{x+3}} - 3 = \frac{2(x+3)}{2} - 3 = x + 3 - 3 = x \]</span></p>
 <h4 id="fx-arctanln-3x"><span class="math inline">\(f(x) = \arctan(\ln 3x)\)</span></h4>
 <p>Аналогично <span class="math display">\[\begin{align}
   &amp; y = \arctan(\ln 3x) \\
+  &amp; \tan y = \tan (\arctan (\ln 3x)) \\
   &amp; \tan y = \ln 3x \\
+  &amp; e^{\tan y} = e^{\ln 3x} \\
   &amp; e^{\tan y} = 3x \\
-  &amp; \frac{e^{\tan y}}{3} = x 
+  &amp; \frac{e^{\tan y}}{3} = x \\
+  &amp; g(x) = \frac{e^{\tan x}}{3}
+\end{align}\]</span></p>
+<p>Уххх</p>
+<p>Проверка <span class="math display">\[\begin{align}
+ &amp; g(f(x)) = \frac{e^{\tan f(x)}}{3} = \frac{e^{\tan (\arctan(\ln 3x))}}{3} = \frac{e^{\ln 3x}}{3} = 
+ \frac{3x}{3} = x
 \end{align}\]</span></p>
 <h3 id="коши">6. Коши</h3>
+<p><span class="math display">\[\lim_{x \to x_0} f(x) = A\]</span></p>
 <p>Надо для любого <span class="math inline">\(\varepsilon\)</span> уметь находить область (=окрестность) вокруг <span class="math inline">\(x_0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|f(x) - A| &lt; \varepsilon\)</span>.</p>
+<p>Надо для любого отрезка с центром <span class="math inline">\(L\)</span> уметь находить отрезок с центром <span class="math inline">\(x_0\)</span>, что если ты из этого отрезка возьмешь точку <span class="math inline">\(x\)</span>, то <span class="math inline">\(f(x)\)</span> будет в том отрезке, содержащем <span class="math inline">\(L\)</span>.</p>
 <p>Также как с пределами, научимся получать по <span class="math inline">\(\varepsilon\)</span> эту окрестность.</p>
 <p>В данном случае <span class="math inline">\(x_0 = 0\)</span>, <span class="math inline">\(f(x) = |x|\)</span>, <span class="math inline">\(A = 0\)</span>.</p>
 <p>Тогда надо по <span class="math inline">\(\varepsilon\)</span> находить область вокруг <span class="math inline">\(x_0 = 0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span>.</p>
 <p><span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span> это <span class="math inline">\(|x| &lt; \varepsilon\)</span>. Если теперь взять отрезок <span class="math inline">\((-\varepsilon; \varepsilon)\)</span>, то это будет окрестность точки <span class="math inline">\(x_0 = 0\)</span>, для каждого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|x| &lt; \varepsilon\)</span></p>
 <h3 id="предел">7. Предел</h3>
 <p>В первом можно просто подставить и получить ответ: <span class="math display">\[ \lim_{x \to 3} \frac{x - 3}{2x + 5} = \frac{3 - 3}{6 + 5} = \frac{0}{11} = 0\]</span></p>
-<p>Во втором если так сделать, мы получим деление 0 на 0, что не очень хорошо: <span class="math display">\[ \lim_{x \to 2} \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{2^2 - 4}{2^2 - 5 \cdot 2 + 6} = \frac{0}{0} = 0\]</span></p>
+<p>Во втором если так сделать, мы получим деление 0 на 0, что не очень хорошо: <span class="math display">\[ \lim_{x \to 2} \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{2^2 - 4}{2^2 - 5 \cdot 2 + 6} = \frac{0}{0}\]</span></p>
 <p>Поэтому сначала можно попробовать сократить дробь. <span class="math display">\[ \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{(x - 2)(x + 2)}{(x - 3)(x - 2)} = \frac{x + 2}{x - 3}\]</span></p>
 <p>А теперь и под предел можно: <span class="math display">\[ \lim_{x \to 2} \frac{x + 2}{x - 3} = \frac{2 + 2}{2 - 3} = -4 \]</span></p>
 <blockquote>
