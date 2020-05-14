@@ -337,6 +337,34 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+1</li>
+<li><input type="checkbox" disabled="" checked="" />
+2</li>
+<li><input type="checkbox" disabled="" checked="" />
+3</li>
+<li><input type="checkbox" disabled="" checked="" />
+4</li>
+<li><input type="checkbox" disabled="" checked="" />
+5</li>
+<li><input type="checkbox" disabled="" />
+6</li>
+<li><input type="checkbox" disabled="" />
+7</li>
+<li><input type="checkbox" disabled="" />
+8</li>
+<li><input type="checkbox" disabled="" />
+9</li>
+<li><input type="checkbox" disabled="" />
+10</li>
+<li><input type="checkbox" disabled="" />
+11</li>
+<li><input type="checkbox" disabled="" />
+12</li>
+<li><input type="checkbox" disabled="" />
+13</li>
+</ul>
 <h3 id="что-это">Что это</h3>
 <p>Производная выражает изменение функции при малом изменении ее аргумента, например</p>
 <ul>
@@ -351,9 +379,9 @@
 <li><p><span class="math inline">\((x^n)&#39; = n x^{n-1}\)</span> Например, <span class="math display">\[\begin{align}
  &amp; (x^2)&#39; = 2x \\
  &amp; (x)&#39; = 1 \\
- &amp; (x^{-1}) = -x^{-2} \\
- &amp; (x^{-2}) = -2x^{-3} \\
- &amp; (\sqrt{x})&#39; = (x^{\frac{1}{2}})&#39; = -\frac{1}{2\sqrt{x}}
+ &amp; (x^{-1})&#39; = -x^{-2} \\
+ &amp; (x^{-2})&#39; = -2x^{-3} \\
+ &amp; (\sqrt{x})&#39; = (x^{\frac{1}{2}})&#39; = \frac{1}{2\sqrt{x}}
   \end{align}\]</span></p></li>
 <li><p>Косинус, синус <span class="math display">\[\begin{align}
 &amp; (\cos x)&#39; = -\sin x \\
@@ -383,7 +411,7 @@
 <h3 id="fx--x2-6x---3-f-2--">1. <span class="math inline">\(f(x) = -x^2 + 6x - 3\)</span>, <span class="math inline">\(f&#39;(-2)\)</span> - ?</h3>
 <p><span class="math display">\[f&#39;(x) = -2x + 6, f&#39;(-2) = 10\]</span></p>
 <h3 id="ft-6-frac12-t-4t2">2. <span class="math inline">\(f(t) = 6 + \frac{1}{2} t + 4t^2\)</span></h3>
-<p>Так как “скорость это производная пути по времени”, найдем ее: <span class="math inline">\(f&#39;(t) = 8t + \frac{1}{2}\)</span>. Теперь найдем скорость при <span class="math inline">\(t = 1\)</span>: <span class="math inline">\(f&#39;(1) = 8 \frac{1}{2}\)</span></p>
+<p>Так как “скорость это производная пути по времени”, найдем ее: <span class="math inline">\(v(t) = f&#39;(t) = 8t + \frac{1}{2}\)</span>. Теперь найдем скорость при <span class="math inline">\(t = 1\)</span>: <span class="math inline">\(f&#39;(1) = 8 \frac{1}{2}\)</span></p>
 <h3 id="pt-2-ln-t-2">3. <span class="math inline">\(P(t) = 2 \ln (t + 2)\)</span></h3>
 <p>Хотим получить скорость изменения популяции в момент времени. Это производная от количества муравьев в популяции, то есть от <span class="math inline">\(P(t) = 2 \ln (t + 2)\)</span>. Нас интересует момент <span class="math inline">\(t = 2\)</span>.</p>
 <p><span class="math display">\[ P&#39;(t) = (2 \ln (t + 2))&#39; = 2 (\ln (t + 2))&#39; = 
@@ -391,13 +419,16 @@
   2 \frac{1}{t + 2} \cdot 1 = \frac{2}{t+2}
 \]</span> <span class="math display">\[P&#39;(2) = \frac{1}{2}\]</span></p>
 <h3 id="найти-fracdvdt-v-frac14-t3">4. Найти <span class="math inline">\(\frac{dV}{dt}\)</span>, <span class="math inline">\(V = \frac{1}{4} t^3\)</span></h3>
+<blockquote>
+<p><span class="math inline">\(\frac{dV}{dt}\)</span> то же самое что <span class="math inline">\(V&#39;(t)\)</span></p>
+</blockquote>
 <p><span class="math display">\[\frac{dV}{dt} = \frac{1}{4} \cdot 3 t^2 = 
 \frac{3}{4} t^2\]</span></p>
 <h3 id="st-4t3">5. <span class="math inline">\(s(t) = 4t^3\)</span></h3>
 <p>Мы хотим найти что-то про скорость, для этого найдем саму формулу скорости: <span class="math display">\[v(t) = s&#39;(t) = (4t^3)&#39; = 12t^2\]</span></p>
 <p>Теперь изменение скорости между <span class="math inline">\(t = 2\)</span>, <span class="math inline">\(t = 3\)</span> равно <span class="math inline">\(v(3) - v(2) = 12 \cdot 9 - 12 \cdot 4 = 12 \cdot 5 = 60\)</span></p>
 <h3 id="pt-frac13-t3---3t2-9t">6. <span class="math inline">\(p(t) = \frac{1}{3} t^3 - 3t^2 + 9t\)</span></h3>
-<p>Снова хотим знать что-то про скорость, найдем ее формулу:</p>
+<p>Снова хотим знать что-то про скорость (когда она равна 0), найдем ее формулу:</p>
 <p><span class="math display">\[v(t) = p&#39;(t) = (\frac{1}{3} t^3 - 3t^2 + 9t)&#39; = 
 (\frac{1}{3} t^3)&#39; - (3t^2)&#39; + (9t)&#39; =
 t^2 - 6t + 9\]</span></p>
@@ -405,11 +436,11 @@ t^2 - 6t + 9\]</span></p>
 <p><span class="math display">\[t_0, t_1 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = 
 \frac{6 \pm \sqrt{36 - 36}}{2} = 
 \frac{6}{2} = 3\]</span></p>
-<p>Наше уравнение имеет 1 корень <span class="math inline">\(t = 3\)</span>, это и есть момент времени, когда частица находилась в покое.</p>
+<p>Наше уравнение имеет единственный корень <span class="math inline">\(t = 3\)</span>, это и есть момент времени, когда частица находилась в покое.</p>
 <h3 id="st--8t2-100">7. <span class="math inline">\(s(t) = -8t^2 + 100\)</span></h3>
 <p>И снова найдем формулу скорости:</p>
 <p><span class="math display">\[v(t) = s&#39;(t) = (-8t^2 + 100)&#39; = -16t\]</span></p>
-<p>Также теперь нас интересует в какой момент камень достигнет земли, так как это не дано в условии. Это произойдет при <span class="math inline">\(s(t) = 0\)</span>.</p>
+<p>Также теперь нас интересует в какой момент камень достигнет земли, так как это не дано в условии. Это произойдет при <span class="math inline">\(s(t) = 0\)</span> (высота камня над уровнем земли равна 0).</p>
 <p>Решим это уравнение: <span class="math display">\[\begin{align}
   &amp; s(t) = 0 \\
   &amp; -8t^2 + 100 = 0 \\
@@ -421,9 +452,11 @@ t^2 - 6t + 9\]</span></p>
 -\frac{80}{\sqrt{2}}\]</span></p>
 <h3 id="экономика">8. Экономика</h3>
 <blockquote>
-<p>Еще про производные Если функция не от одной переменной, а от нескольких, то производную можно брать по какой-то одной переменной, считая остальные константами. Например <span class="math inline">\(f(x, y) = x^2 * y + x + 2y\)</span>, тогда <span class="math display">\[\frac{df}{dx} = \frac{d(x^2 y + x + 2y)}{dx} = 2y \cdot x + 1\]</span> <span class="math display">\[\frac{df}{dy} = \frac{d(x^2 y + x + 2y)}{dx} = x^2 + 2\]</span> В первом случае мы считали <span class="math inline">\(y\)</span> константой, а во втором - <span class="math inline">\(x\)</span>.</p>
+<p>Еще про производные</p>
+<p>Если функция не от одной переменной, а от нескольких, то производную можно брать по какой-то одной переменной, считая остальные константами. Например <span class="math inline">\(f(x, y) = x^2 y + x + 2y\)</span>, тогда</p>
+<p>Производная по <span class="math inline">\(x\)</span>: <span class="math display">\[\frac{df}{dx} = \frac{d(x^2 y + x + 2y)}{dx} = 2y \cdot x + 1\]</span> Производная по <span class="math inline">\(y\)</span>: <span class="math display">\[\frac{df}{dy} = \frac{d(x^2 y + x + 2y)}{dy} = x^2 + 2\]</span> В первом случае мы считали <span class="math inline">\(y\)</span> константой, а во втором - <span class="math inline">\(x\)</span>.</p>
 </blockquote>
-<p>У нас есть <span class="math inline">\(Y = AK^{\alpha}L^{1 - \alpha}\)</span>. Мы хотим узнать скорость выпуска продукции в зависимости от капитала, то есть производную <span class="math inline">\(Y\)</span> по <span class="math inline">\(K\)</span>. <span class="math display">\[\frac{dY}{dK} = \frac{d (AL^{1-\alpha}) K^{\alpha}}{dK} = AL^{1-\alpha} \alpha K^{\alpha - 1}\]</span></p>
+<p>У нас есть <span class="math inline">\(Y = AK^{\alpha}L^{1 - \alpha}\)</span>. Мы хотим узнать скорость выпуска продукции в зависимости от капитала, то есть производную <span class="math inline">\(Y\)</span> по <span class="math inline">\(K\)</span>. <span class="math display">\[\frac{dY}{dK} = \frac{d ((AL^{1-\alpha}) K^{\alpha})}{dK} = (AL^{1-\alpha}) \alpha K^{\alpha - 1}\]</span></p>
 <h3 id="найти-производные">9. Найти производные</h3>
 <ol type="1">
 <li><span class="math inline">\(f(x) = \sqrt{x}(2x^2 - 4x)\)</span></li>
@@ -471,26 +504,45 @@ t^2 - 6t + 9\]</span></p>
 \end{align}\]</span></p></li>
 </ol>
 <h3 id="бе">11. Бе</h3>
-<p>Найти <span class="math inline">\(\frac{d g(f(x))}{dx}\)</span> в точке 1. Это <span class="math inline">\((g(f(x)))&#39;\)</span>. По формуле это <span class="math inline">\(g&#39;(f(x)) \cdot f&#39;(x)\)</span> Найдем в точке 1: <span class="math display">\[ f(1) = 2, f&#39;(1) = 3 \]</span> Подставим: <span class="math display">\[g&#39;(f(1)) \cdot f&#39;(1) = g&#39;(2) \cdot 3 = (-1) \cdot 3 = -3\]</span></p>
-<p>Аналогично второе, <span class="math inline">\((f(g(x)))&#39; = f&#39;(g(x)) \cdot g&#39;(x)\)</span>, <span class="math inline">\(g(1) = 2, g&#39;(1) = 0\)</span>, <span class="math inline">\(f&#39;(g(1)) \cdot g&#39;(1) = f&#39;(2) \cdot 0 = 0\)</span>.</p>
+<p>Найти <span class="math inline">\(\frac{d g(f(x))}{dx}\)</span> в точке 1. Это <span class="math inline">\((g(f(x)))&#39;\)</span>. По формуле это <span class="math inline">\(g&#39;(f(x)) \cdot f&#39;(x)\)</span> Найдем в точке 1 <span class="math inline">\(g&#39;(f(1)) \cdot f&#39;(1)\)</span>: <span class="math display">\[ f(1) = 2, f&#39;(1) = 3 \]</span> Подставим: <span class="math display">\[g&#39;(f(1)) \cdot f&#39;(1) = g&#39;(2) \cdot 3 = 2 \cdot 3 = 6\]</span></p>
+<p>Аналогично второе, <span class="math inline">\((f(g(x)))&#39; = f&#39;(g(x)) \cdot g&#39;(x)\)</span></p>
+<p><span class="math inline">\(g(1) = 2, g&#39;(1) = 0\)</span>, <span class="math inline">\(f&#39;(g(1)) \cdot g&#39;(1) = f&#39;(2) \cdot 0 = 0\)</span>.</p>
 <h3 id="b-sqrtc-fracdadb-b2">12. <span class="math inline">\(B = \sqrt{C}\)</span>, <span class="math inline">\(\frac{dA}{dB} = B^2\)</span></h3>
-<p>Скорость изменения <span class="math inline">\(A\)</span> от <span class="math inline">\(B\)</span> это производная <span class="math inline">\(A\)</span>.</p>
-<p>Теперь мы хотим изменение <span class="math inline">\(A\)</span> относительно <span class="math inline">\(C\)</span>. Подбором найдем <span class="math inline">\(A\)</span>.</p>
+<blockquote>
+<p>Тут важно смотреть где “скорость изменения”, а где “изменение”</p>
+</blockquote>
+<p>“Скорость изменения <span class="math inline">\(A\)</span> от <span class="math inline">\(B\)</span>” это производная <span class="math inline">\(A\)</span>.</p>
+<p>Теперь мы хотим изменение <span class="math inline">\(A\)</span> относительно <span class="math inline">\(C\)</span>. Подбором найдем (угадаем) изменение <span class="math inline">\(A\)</span> от <span class="math inline">\(B\)</span>. (Хотим найти такую функцию, что ее производная будет <span class="math inline">\(B^2\)</span>)</p>
 <p><span class="math display">\[\begin{align}
 &amp; A&#39;(B) = B^2 \\
 &amp; A(B) = \frac{B^3}{3}
 \end{align}\]</span></p>
 <p>Ну а теперь легко найти <span class="math inline">\(A(B(C)) = A(\sqrt{C}) = \frac{(\sqrt{C})^3}{3}\)</span></p>
 <h3 id="прибыль">13. Прибыль</h3>
-<p>Хотим максимальную прибыль. Прибыль это доход минус расход. Доход это число проданных на цену телефона, расход это число произведенных телефонов на стоимость производства. Тогда доход это <span class="math inline">\(P \cdot N_{max} e^{-\frac{P}{\lambda}}\)</span>, расход - <span class="math inline">\(C \cdot N_{max} e^{-\frac{P}{\lambda}}\)</span> Прибыль это <span class="math display">\[(P - C) \cdot N_{max} e^{-\frac{P}{\lambda}}\]</span></p>
-<p>Найдем производную по <span class="math inline">\(P\)</span>.</p>
-<p><span class="math display">\[N_{max} e^{-\frac{P}{\lambda}} + (P - C) N_{max} e^{-\frac{P}{\lambda}}(-\frac{1}{\lambda})\]</span></p>
-<p>Приравняем <span class="math inline">\(0\)</span>:</p>
-<p><span class="math display">\[\begin{align}
-&amp; N_{max} e^{-\frac{P}{\lambda}} + (P - C) N_{max} e^{-\frac{P}{\lambda}}(-\frac{1}{\lambda}) = 0 \\
-&amp; N_{max} e^{-\frac{P}{\lambda}}(1 + (P - C) (- \frac{1}{\lambda})) = 0 \\
-&amp; (1 + (P - C) (- \frac{1}{\lambda})) = 0 \\
-&amp; P = \lambda + C
+<blockquote>
+<p>Тут используется, что в точках максимума/минимума производная функции равна 0</p>
+</blockquote>
+<p>Хотим максимальную прибыль. Прибыль это доход минус расход. Доход это число проданных телефонов умножить на цену телефона, расход это число произведенных телефонов умножить на стоимость производства. Будем производить столько же, сколько покупают.</p>
+<p>Тогда доход это <span class="math inline">\(P \cdot N_{max} e^{-\frac{P}{\lambda}} = P \cdot 10000000 \cdot e^{-\frac{P}{50}}\)</span>, расход - <span class="math inline">\(C \cdot N_{max} e^{-\frac{P}{\lambda}} = 250 \cdot 10000000 \cdot e^{-\frac{P}{50}}\)</span> Прибыль это <span class="math display">\[(P - 250) \cdot 10000000 e^{-\frac{P}{50}}\]</span></p>
+<p>Найдем производную: <span class="math display">\[\begin{align}
+&amp; \{(P - 250) \cdot 10000000 e^{-\frac{P}{50}}\}&#39; = \\
+&amp; 10000000 \cdot \{(P - 250) \cdot e^{-\frac{P}{50}}\}&#39; = \\
+&amp; 10000000 \cdot \{(P - 250)&#39; \cdot e^{-\frac{P}{50}} + (P - 250) \cdot (e^{-\frac{P}{50}})&#39;\} = \\
+&amp; 10000000 \cdot \{e^{-\frac{P}{50}} + (P - 250) \cdot e^{-\frac{P}{50}} (-\frac{P}{50})&#39;\} = \\
+&amp; 10000000 \cdot \{e^{-\frac{P}{50}} + (P - 250) \cdot e^{-\frac{P}{50}} (-\frac{1}{50})\} = \\
+&amp; 10000000 \cdot e^{-\frac{P}{50}} \{1 + (P - 250) \cdot (-\frac{1}{50})\}
 \end{align}\]</span></p>
+<p>Теперь нас интересует максимум. Чтобы найти возможные точки, где функция максимальна, приравняем ее производную к <span class="math inline">\(0\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+&amp; 10000000 \cdot e^{-\frac{P}{50}} \{1 + (P - 250) \cdot (-\frac{1}{50})\} = 0\\
+&amp; 1 + (P - 250) \cdot (-\frac{1}{50}) = 0 \\
+&amp; P - 250 = 50 \\
+&amp; P = 300 \\
+\end{align}\]</span></p>
+<p>В заключение стоит сказать, что производная левее <span class="math inline">\(P = 300\)</span> положительна, то есть функция возрастает, а справа отрицательна, то есть функция убывает. Значит при <span class="math inline">\(P = 300\)</span> функция достигает максимума (а не минимума).</p>
+<hr />
+<p>Liebe Damen und Herren, спасибо за внимание</p>
+<p>В следующей серии вы увидите дифференциальные уравнения и <em>живые будут завидовать мертвым</em></p>
+<p>* Немного Джона Сильвера *</p>
 </body>
 </html>
