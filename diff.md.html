@@ -420,6 +420,10 @@ t^2 - 6t + 9\]</span></p>
 -16 \frac{5}{\sqrt{2}} = 
 -\frac{80}{\sqrt{2}}\]</span></p>
 <h3 id="экономика">8. Экономика</h3>
+<blockquote>
+<p>Еще про производные Если функция не от одной переменной, а от нескольких, то производную можно брать по какой-то одной переменной, считая остальные константами. Например <span class="math inline">\(f(x, y) = x^2 * y + x + 2y\)</span>, тогда <span class="math display">\[\frac{df}{dx} = \frac{d(x^2 y + x + 2y)}{dx} = 2y \cdot x + 1\]</span> <span class="math display">\[\frac{df}{dy} = \frac{d(x^2 y + x + 2y)}{dx} = x^2 + 2\]</span> В первом случае мы считали <span class="math inline">\(y\)</span> константой, а во втором - <span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<p>У нас есть <span class="math inline">\(Y = AK^{\alpha}L^{1 - \alpha}\)</span>. Мы хотим узнать скорость выпуска продукции в зависимости от капитала, то есть производную <span class="math inline">\(Y\)</span> по <span class="math inline">\(K\)</span>. <span class="math display">\[\frac{dY}{dK} = \frac{d (AL^{1-\alpha}) K^{\alpha}}{dK} = AL^{1-\alpha} \alpha K^{\alpha - 1}\]</span></p>
 <h3 id="найти-производные">9. Найти производные</h3>
 <ol type="1">
 <li><span class="math inline">\(f(x) = \sqrt{x}(2x^2 - 4x)\)</span></li>
@@ -427,7 +431,7 @@ t^2 - 6t + 9\]</span></p>
 <p><span class="math display">\[\begin{align}
 (\sqrt{x}(2x^2 - 4x))&#39; = 
 (\sqrt{x})&#39; \cdot (2x^2 - 4x) + \sqrt{x} \cdot (2x^2 - 4x)&#39; =  \\
-= -\frac{1}{2\sqrt{x}} \cdot (2x^2 - 4x) + \sqrt{x} \cdot (4x - 4)
+= \frac{1}{2\sqrt{x}} \cdot (2x^2 - 4x) + \sqrt{x} \cdot (4x - 4)
 \end{align}\]</span></p>
 <ol start="2" type="1">
 <li><span class="math inline">\(f(x) = 6x^4 - \frac{3}{x^2} - 2\pi\)</span></li>
@@ -444,7 +448,7 @@ t^2 - 6t + 9\]</span></p>
 &amp; 7\{(x^3 + 4x)^5 \cos x\}&#39; = \\
 &amp; 7\{((x^3 + 4x)^5)&#39; \cdot \cos x + (x^3 + 4x)^5 \cdot (\cos x)&#39;\} = \\
 &amp; 7\{5(x^3 + 4x)^4 (x^3 + 4x)&#39; \cdot \cos x - (x^3 + 4x)^5 \cdot (\sin x)\} = \\
-&amp; 7\{5(x^3 + 4x)^4 (3x^2 + 4) \cdot \cos x - (x^3 + 4x)^5 \cdot (\sin x)\} = \\
+&amp; 7\{5(x^3 + 4x)^4 (3x^2 + 4) \cdot \cos x - (x^3 + 4x)^5 \cdot (\sin x)\}
 \end{align}\]</span></li>
 </ol>
 <h3 id="ничего-не-поменялось">10. Ничего не поменялось</h3>
@@ -467,6 +471,8 @@ t^2 - 6t + 9\]</span></p>
 \end{align}\]</span></p></li>
 </ol>
 <h3 id="бе">11. Бе</h3>
+<p>Найти <span class="math inline">\(\frac{d g(f(x))}{dx}\)</span> в точке 1. Это <span class="math inline">\((g(f(x)))&#39;\)</span>. По формуле это <span class="math inline">\(g&#39;(f(x)) \cdot f&#39;(x)\)</span> Найдем в точке 1: <span class="math display">\[ f(1) = 2, f&#39;(1) = 3 \]</span> Подставим: <span class="math display">\[g&#39;(f(1)) \cdot f&#39;(1) = g&#39;(2) \cdot 3 = (-1) \cdot 3 = -3\]</span></p>
+<p>Аналогично второе, <span class="math inline">\((f(g(x)))&#39; = f&#39;(g(x)) \cdot g&#39;(x)\)</span>, <span class="math inline">\(g(1) = 2, g&#39;(1) = 0\)</span>, <span class="math inline">\(f&#39;(g(1)) \cdot g&#39;(1) = f&#39;(2) \cdot 0 = 0\)</span>.</p>
 <h3 id="b-sqrtc-fracdadb-b2">12. <span class="math inline">\(B = \sqrt{C}\)</span>, <span class="math inline">\(\frac{dA}{dB} = B^2\)</span></h3>
 <p>Скорость изменения <span class="math inline">\(A\)</span> от <span class="math inline">\(B\)</span> это производная <span class="math inline">\(A\)</span>.</p>
 <p>Теперь мы хотим изменение <span class="math inline">\(A\)</span> относительно <span class="math inline">\(C\)</span>. Подбором найдем <span class="math inline">\(A\)</span>.</p>
@@ -476,5 +482,15 @@ t^2 - 6t + 9\]</span></p>
 \end{align}\]</span></p>
 <p>Ну а теперь легко найти <span class="math inline">\(A(B(C)) = A(\sqrt{C}) = \frac{(\sqrt{C})^3}{3}\)</span></p>
 <h3 id="прибыль">13. Прибыль</h3>
+<p>Хотим максимальную прибыль. Прибыль это доход минус расход. Доход это число проданных на цену телефона, расход это число произведенных телефонов на стоимость производства. Тогда доход это <span class="math inline">\(P \cdot N_{max} e^{-\frac{P}{\lambda}}\)</span>, расход - <span class="math inline">\(C \cdot N_{max} e^{-\frac{P}{\lambda}}\)</span> Прибыль это <span class="math display">\[(P - C) \cdot N_{max} e^{-\frac{P}{\lambda}}\]</span></p>
+<p>Найдем производную по <span class="math inline">\(P\)</span>.</p>
+<p><span class="math display">\[N_{max} e^{-\frac{P}{\lambda}} + (P - C) N_{max} e^{-\frac{P}{\lambda}}(-\frac{1}{\lambda})\]</span></p>
+<p>Приравняем <span class="math inline">\(0\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+&amp; N_{max} e^{-\frac{P}{\lambda}} + (P - C) N_{max} e^{-\frac{P}{\lambda}}(-\frac{1}{\lambda}) = 0 \\
+&amp; N_{max} e^{-\frac{P}{\lambda}}(1 + (P - C) (- \frac{1}{\lambda})) = 0 \\
+&amp; (1 + (P - C) (- \frac{1}{\lambda})) = 0 \\
+&amp; P = \lambda + C
+\end{align}\]</span></p>
 </body>
 </html>
