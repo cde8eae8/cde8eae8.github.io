@@ -360,7 +360,7 @@
 </ol>
 <h3 id="кофеее">2. Кофеее</h3>
 <p>У нас есть уравнение <span class="math inline">\(\frac{dC(t)}{dt} = -0.14 C(t)\)</span>. Хотим найти из него <span class="math inline">\(C(t)\)</span>.</p>
-<p>На паре показали, что это <span class="math inline">\(C_0e^{-0.14 t}\)</span>. Тогда Уменьшится в 2 раза за время, которое можно получить решив <span class="math inline">\(\frac{C(t)}{C(0)} = \frac{1}{2}\)</span>:</p>
+<p>На паре показали, что это <span class="math inline">\(C(t) = C_0e^{-0.14 t}\)</span>. Тогда уменьшится в 2 раза за время, которое можно получить решив <span class="math inline">\(\frac{C(t)}{C(0)} = \frac{1}{2}\)</span>:</p>
 <p><span class="math display">\[\begin{align}
     &amp; \frac{C_0 e^{-0.14 t}}{C_0 e^{-0.14 \cdot 0}} = \frac{1}{2} \\
     &amp; \frac{e^{-0.14 t}}{e^{0}} = \frac{1}{2} \\
@@ -379,22 +379,22 @@
 \end{align}\]</span></p>
 <p>Найдем <span class="math inline">\(C\)</span>: <span class="math display">\[\begin{align}
   &amp; T(0) = 36 \\
-  &amp; T(0) = A + kAC e^{-k \cdot 36} \\
-  &amp; 36 = A + kAC e^{-k \cdot 36} \\
-  &amp; C = \frac{36 - A}{kA e^{-k \cdot 36}}
+  &amp; T(0) = A + kAC e^{-k \cdot 0} \\
+  &amp; 36 = A + kAC e^{-k \cdot 0} \\
+  &amp; 36 = A + kAC \\
+  &amp; C = \frac{36 - A}{kA}
 \end{align}\]</span> Отсюда <span class="math display">\[\begin{align}
- &amp; T(t) = A + \frac{36 - A}{kA e^{-k \cdot 36}} kAe^{-kt} \\
- &amp; T(t) = A + \frac{36 - A}{e^{-k \cdot 36}} e^{-kt} \\
+ &amp; T(t) = A + \frac{36 - A}{kA} kAe^{-kt} \\
+ &amp; T(t) = A + (36 - A) e^{-kt} \\
 \end{align}\]</span></p>
 <p>Теперь интересно, когда <span class="math inline">\(T(t) = 28\)</span>. <span class="math display">\[\begin{align}
-  &amp; 28 = A + \frac{36 - A}{e^{-k \cdot 36}} e^{-k \cdot t} \\
-  &amp; 28 = -2 + \frac{36 - (-2)}{e^{-0.016 \cdot 36}} e^{-0.016 \cdot t} \\
-  &amp; 30 \cdot {e^{-0.016 \cdot 36}}= 38 e^{-0.016 \cdot t} \\
-  &amp; \frac{30}{38} = e^{-0.016 \cdot (t - 36)} \\
-  &amp; \ln \frac{30}{38} = -0.016 \cdot (t - 36) \\
-  &amp; -62.5 \cdot \ln \frac{30}{38} = t - 36 \\
-  &amp; -62.5 \cdot \ln \frac{30}{38} + 36 = t \\
-  &amp; t \approx 50 \; \text{минут}
+  &amp; T(t) = 28 \\
+  &amp; -2 + (36 - (-2)) e^{-0.016 \cdot t} = 28 \\
+  &amp; 38 e^{-0.016 \cdot t} = 30 \\
+  &amp; e^{-0.016 \cdot t} = \frac{30}{38} \\
+  &amp; -0.016 \cdot t = \ln \frac{30}{38} \\
+  &amp; t = -62.5 \cdot \ln \frac{30}{38} \\
+  &amp; t \approx 14
 \end{align}\]</span></p>
 <h3 id="check">4. [check]</h3>
 <p><span class="math display">\[\begin{align}
