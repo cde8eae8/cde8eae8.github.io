@@ -345,7 +345,7 @@
 <p>Интегрирование это обратное действие к нахождению производной. Как деление и умножение, например. То есть если ты возьмешь неопределенной интеграл от производной какой-нибудь <span class="math inline">\(f(x)\)</span>, ты получишь <span class="math inline">\(f(x)\)</span>.</p>
 <p>Какое-то объяснение, которое надо бы дописать…</p>
 <h3 id="таблица-интегралов">Таблица интегралов</h3>
-<p><span class="math display">\[\int c f(x) dx = c \int f(x) + C\]</span> <span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n + 1} + C\]</span> Формула выше не работает при <span class="math inline">\(n = -1\)</span> (получается деление на 0). Починим это формулой <span class="math display">\[\int x^{-1} dx = \int \frac{1}{x} dx = \ln |x| + C\]</span></p>
+<p><span class="math display">\[\int f(x) + g(x) dx = \int f(x)dx + \int g(x)dx + C\]</span> <span class="math display">\[\int c f(x) dx = c \int f(x) + C\]</span> <span class="math display">\[\int x^n dx = \frac{x^{n+1}}{n + 1} + C\]</span> Формула выше не работает при <span class="math inline">\(n = -1\)</span> (получается деление на 0). Починим это формулой <span class="math display">\[\int x^{-1} dx = \int \frac{1}{x} dx = \ln |x| + C\]</span> <span class="math display">\[\int f&#39;(x) dx = f(x)\]</span> <span class="math display">\[(\int f(x) dx)&#39; = f(x)\]</span></p>
 <h3 id="интегралы">1. Интегралы</h3>
 <ol type="1">
 <li><p><span class="math inline">\(\int (4x^3 + 3x^2 + 2x + 1) dx\)</span> <span class="math display">\[x^4 + x^3 + x^2 + x\]</span></p></li>
@@ -368,8 +368,8 @@
     &amp; -0.14 t = \ln \frac{1}{2} \\
     &amp; t = -\frac{1}{0.14} \ln \frac{1}{2} \\
   \end{align}\]</span></p>
-<h3 id="todo-3.-в-этих-заданиях-слишком-много-воды">[TODO] 3. В этих заданиях слишком много воды</h3>
-<p>Знаем что <span class="math display">\[\frac{dT}{dt} = kA - kT\]</span>. Отсюда получаем по формуле с пары, что <span class="math display">\[\begin{align}
+<h3 id="в-этих-заданиях-слишком-много-воды">3. В этих заданиях слишком много воды</h3>
+<p>Знаем что <span class="math display">\[\frac{dT}{dt} = kA - kT\]</span> Отсюда получаем по формуле с пары, что <span class="math display">\[\begin{align}
   &amp; T(t) = e^{\int -k} (\int kA e^{-\int -k}) \\
   &amp; T(t) = e^{-kt} (\int kA e^{kt}) \\
   &amp; T(t) = e^{-kt} kA (\int e^{kt}) \\
@@ -396,7 +396,7 @@
   &amp; t = -62.5 \cdot \ln \frac{30}{38} \\
   &amp; t \approx 14
 \end{align}\]</span></p>
-<h3 id="check">4. [check]</h3>
+<h3 id="section">4.</h3>
 <p><span class="math display">\[\begin{align}
   &amp; \frac{dx}{dt} = \frac{x}{t} \\
   &amp; \frac{dx}{x} = \frac{dt}{t} \\
@@ -404,7 +404,7 @@
   &amp; \ln x = \ln t + C \\
   &amp; x = t e^C
 \end{align}\]</span></p>
-<h3 id="section">5.</h3>
+<h3 id="section-1">5.</h3>
 <p>Нам дана функция <span class="math inline">\(D(t)\)</span> - долг, ее значение в точке <span class="math inline">\(0\)</span> <span class="math inline">\(D(0) = 400000\)</span>, и уравнение <span class="math inline">\(\frac{dD}{dt} = rD - P\)</span>.</p>
 <p>На лекции показали, что мы можем найти <span class="math inline">\(D\)</span>. Это <span class="math display">\[\begin{align}
   &amp; e^{\int r dt} (\int -P e^{-\int r dt} dt) = \\
@@ -430,11 +430,11 @@
   &amp; 20 \ln 2 = t \\
   &amp; t \approx 13.86
 \end{align}\]</span></p>
-<h3 id="section-1">6.</h3>
+<h3 id="section-2">6.</h3>
 <p>Из <span class="math inline">\(\frac{dP(t)}{dt} = bP(t)\)</span> находим что <span class="math inline">\(P(t) = p_0 \cdot e^{bt}\)</span>.</p>
 <p>Зная, что <span class="math inline">\(P(2002) = p_0 \cdot e^{2002 \cdot b} = 6 \cdot 10^9\)</span>, получим что <span class="math inline">\(p_0 = \frac{6 \cdot 10^9}{e^{b \cdot 2002}}\)</span>.</p>
 <p>Отсюда <span class="math inline">\(P(2030) = \frac{6 \cdot 10^9}{e^{b \cdot 2002}} \cdot e^{b \cdot 2030} = 6 \cdot 10^9 \cdot e^{b \cdot 28} = 6 \cdot 10^9 \cdot e^{0.011 \cdot 28} = 8164205933\)</span></p>
-<h3 id="section-2">7.</h3>
+<h3 id="section-3">7.</h3>
 <p>Когда <span class="math inline">\(1800 P(t) = F_0 + st\)</span>?</p>
 <p>Зная, что <span class="math inline">\(F(t) = F_0 + st\)</span> и <span class="math inline">\(F(2002) = 6.12 \cdot 10^{15}\)</span>, получим <span class="math inline">\(6.12 \cdot 10^{15} = F_0 + 1.11 \cdot 10^{14} \cdot 2002\)</span></p>
 <p>Отсюда <span class="math inline">\(F_0 = -216102000000000000\)</span>.</p>
@@ -442,13 +442,14 @@
   &amp; 1800 \frac{6 \cdot 10^9}{e^{0.011 \cdot 2002}} e^{bt}= -216102000000000000 + 1.11 \cdot 10^{14} \cdot t \\
 \end{align}\]</span></p>
 <p>На питоне перебором посмотрим когда левая часть впервые будет больше правой. Это будет при <span class="math inline">\(t = 2831.\)</span></p>
-<h3 id="section-3">8.</h3>
-<p><span class="math display">\[\begin{align}
+<h3 id="section-4">8.</h3>
+<p>У нас есть <span class="math inline">\(p(t)\)</span>, <span class="math inline">\(S(t)\)</span>. <span class="math inline">\(dp = \frac{dp}{dt}dt\)</span> Хотим чтобы <span class="math inline">\(p(t)\)</span> росла линейно, это значит <span class="math inline">\(\frac{dp}{dt} = C\)</span>. <span class="math display">\[\begin{align}
   &amp; dp = k\frac{dS}{S} \\
-  &amp; C = k \frac{dS}{S} \\
-  &amp; C = \frac{dS}{S} \\
-  &amp; CS = dS \\
-  &amp; 
+  &amp; \frac{dp}{dt}t = k\frac{dS}{S} \\
+  &amp; Cdt = k\frac{dS}{S} \\
+  &amp; S\frac{C}{k} = \frac{dS}{dt} \\
+  &amp; S = Ke^{\frac{C}{k}} \\
 \end{align}\]</span></p>
+<p>Здесь <span class="math inline">\(K\)</span>, <span class="math inline">\(C\)</span> - какие-то константы.</p>
 </body>
 </html>
