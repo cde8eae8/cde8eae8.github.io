@@ -12,8 +12,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -29,6 +90,11 @@
   }
 
   pre {
+    background: #ddd
+  }
+
+  pre {
+    border-radius: 5px;
     padding: .5rem;
     line-height: 1.25;
     overflow-x: auto;
@@ -221,9 +287,6 @@
     padding: .25rem;
   }
 
-  pre {
-    background-color: #bbb;
-  }
 
   blockquote {
     border-left: 3px solid #01ff70;
@@ -337,187 +400,94 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<h3 id="fx-sqrt1-x2">1. <span class="math inline">\(f(x) = \sqrt{1 + x^2}\)</span></h3>
+<p>Если кратко,</p>
 <ol type="1">
-<li><p><span class="math inline">\(f(0) = \sqrt{1 + 0^2} = \sqrt{1} = 1\)</span></p></li>
-<li><p><span class="math inline">\(f(x^2) = \sqrt{1 + (x^2)^2} = \sqrt{1 + x^4}\)</span></p></li>
-<li><p><span class="math inline">\(f(-x) = \sqrt{1 + (-x)^2} = \sqrt{1 + x^2}\)</span></p></li>
-<li><p><span class="math inline">\(f(\frac{1}{x}) = \sqrt{1 + (\frac{1}{x})^2}\)</span></p></li>
-<li><p><span class="math inline">\(\frac{1}{f(x)} = \frac{1}{\sqrt{1 + x^2}}\)</span></p></li>
-<li><p><span class="math inline">\(f(a) + 1 = \sqrt{1 + a^2} + 1\)</span></p></li>
+<li>проблема того кода в том, что функции не могут быть объявлены и определены внутри других функций, правильно было бы просто написать определение is_letter перед определением main.</li>
+<li>Метод класса это по сути функция, которая объявлена в классе и которой неявно передается еще один аргумент - this</li>
+<li>Вообще объявление функций выглядит примерно <a href="./example.cpp">так</a></li>
 </ol>
-<h3 id="область-определения-при-каких-x-имеет-смысл-выражение">2. Область определения (при каких <span class="math inline">\(x\)</span> имеет смысл выражение)</h3>
-<h4 id="y-frac3x1x2-1"><span class="math inline">\(y = \frac{3x+1}{x^2-1}\)</span></h4>
-<p>Единственное условие - знаменатель не равен <span class="math inline">\(0\)</span>. <span class="math display">\[x^2 - 1 \neq 0 \Leftrightarrow x \neq \pm 1\]</span> Область определения - любой <span class="math inline">\(x\)</span> кроме <span class="math inline">\(\pm 1\)</span></p>
-<h4 id="y-fraclnxsqrtx2---2"><span class="math inline">\(y = \frac{\ln(x)}{\sqrt{|x^2 - 2|}}\)</span></h4>
-<p>Ограничения:</p>
-<ol type="1">
-<li><p>Выражение под корнем больше или равно 0</p></li>
-<li><p>Знаменатель не равен <span class="math inline">\(0\)</span></p></li>
-<li><p>Аргумент логарифма больше <span class="math inline">\(0\)</span></p></li>
-</ol>
-<p>Считаем:</p>
-<ol type="1">
-<li><p><span class="math inline">\(|x^2 - 2| \ge 0\)</span> выполнено всегда</p></li>
-<li><p>Знаменатель <span class="math display">\[\begin{align}
-&amp; \sqrt{|x^2 - 2|} \neq 0 \\
-&amp; |x^2 - 2| \neq 0 \\
-&amp; x^2 - 2 \neq 0 \\
-&amp; x \neq \pm \sqrt{2}
-  \end{align}\]</span></p></li>
-<li><p>Логарифм: <span class="math inline">\(x &gt; 0\)</span></p></li>
-</ol>
-<p>В итоге получаем, <span class="math inline">\(x &gt; 0\)</span> и <span class="math inline">\(x \neq \sqrt{2}\)</span></p>
-<h4 id="y-sqrt-x-tanx"><span class="math inline">\(y = \sqrt{-x} + \tan(x)\)</span></h4>
-<ol type="1">
-<li><p>Выражение под корнем должно быть неотрицательным</p></li>
-<li><p>Аргумент тангенса не должен быть равен <span class="math inline">\(\frac{\pi}{2} + \pi n, n \in \mathbb{Z}\)</span></p></li>
-</ol>
-<p>Считаем:</p>
-<ol type="1">
-<li><p>Корень <span class="math display">\[\begin{align}
-  &amp; -x \ge 0 \\
-  &amp; x \le 0
-\end{align}\]</span></p></li>
-<li><p>Тангенс: <span class="math inline">\(x \neq \frac{\pi}{2} + \pi n, n \in \mathbb{Z}\)</span></p></li>
-</ol>
-<p>В итоге <span class="math inline">\(x \neq \frac{\pi}{2} + \pi n, n = -1, -2, \dots\)</span></p>
-<h4 id="y-arccos-frac2x1-x"><span class="math inline">\(y = \arccos \frac{2x}{1 + x}\)</span></h4>
-<ol type="1">
-<li><p>Аргумент арккосинуса должен быть от <span class="math inline">\(-1\)</span> до <span class="math inline">\(1\)</span></p></li>
-<li><p>Знаменатель не должен быть равен <span class="math inline">\(0\)</span></p></li>
-</ol>
-<p>Считаем:</p>
-<ol type="1">
-<li><span class="math display">\[\begin{align}
-  &amp; -1 \le \frac{2x}{1 + x} и \frac{2x}{1 + x} \le 1 \\
-  &amp; 0 \le \frac{3x + 1}{1 + x} и \frac{x - 1}{1 + x} \le 0 \\
-\end{align}\]</span> Хотим числитель и знаменатель одного знака в первом случае и разных во втором.</li>
-</ol>
-<p>В первом случае это получается при <span class="math inline">\(x \ge -\frac{1}{3}\)</span> (оба положительны) или <span class="math inline">\(x \le -1\)</span> (оба отрицательны). Во втором при <span class="math inline">\(-1 \le x \le 1\)</span></p>
-<p>Оба условия выполняются при <span class="math inline">\(x = -1, -\frac{1}{3} \le x \le 1\)</span></p>
-<ol start="2" type="1">
-<li>Можно было отсечь в прошлом пункте, <span class="math inline">\(x \neq -1\)</span>, так как знаменатель обращается в 0.</li>
-</ol>
-<p>В итоге <span class="math inline">\(-\frac{1}{3} \le x \le 1\)</span></p>
-<h3 id="область-значения-какие-y-могут-быть">Область значения (какие y могут быть)</h3>
-<h4 id="y-x2---8x-20"><span class="math inline">\(y = x^2 - 8x + 20\)</span></h4>
-<p>Преобразуем:</p>
-<p><span class="math display">\[y = x^2 - 8x + 20 = x^2 - 2 \cdot 4 \cdot x + 4^2 + 4 = 
-(x - 4)^2 + 4\]</span></p>
-<p>Так как <span class="math inline">\((x - 4)^2\)</span> принимает значение от <span class="math inline">\(0\)</span> до <span class="math inline">\(\infty\)</span>, <span class="math inline">\(y\)</span> принимает значения от <span class="math inline">\(4\)</span> до <span class="math inline">\(\infty\)</span></p>
-<h4 id="y-frac1x-4"><span class="math inline">\(y = \frac{1}{x} + 4\)</span></h4>
-<p><span class="math inline">\(\frac{1}{x}\)</span> принимает все значения кроме <span class="math inline">\(0\)</span>, значит <span class="math inline">\(y\)</span> принимает все значения кроме <span class="math inline">\(4\)</span>.</p>
-<h4 id="y-2-sin-x---7"><span class="math inline">\(y = 2 \sin x - 7\)</span></h4>
-<p><span class="math display">\[\begin{align}
-&amp; -1 \le \sin x \le 1 \\
-&amp; -2 \le 2 \sin x \le 2 \\
-&amp; -9 \le 2 \sin x - 7 \le -5 
-\end{align}\]</span></p>
-<h4 id="y-arcsin-fracx2-12x"><span class="math inline">\(y = \arcsin \frac{x^2 + 1}{2x}\)</span></h4>
-<p>Давайте посмотрим, при каких <span class="math inline">\(x\)</span> эта функция существует.</p>
-<p><span class="math display">\[\begin{align}
-&amp; -1 \le \frac{x^2 + 1}{2x} и \frac{x^2 + 1}{2x} \le 1 \\
-&amp; 0 \le \frac{x^2 + 2x + 1}{2x} и \frac{x^2 - 2x + 1}{2x} \le 0 \\
-&amp; 0 \le \frac{(x + 1)^2}{2x} и \frac{(x - 1)^2}{2x} \le 0 \\
-\end{align}\]</span> Первое выполнено при <span class="math inline">\(x = -1, x \ge 0\)</span>, второе при <span class="math inline">\(x = 1, x \le 0\)</span>, а также <span class="math inline">\(x \neq 0\)</span> из-за знаменателя. Получаем что функция вообще существует только при <span class="math inline">\(x = \pm 1\)</span>, отсюда просто подставив получим чему может быть равен <span class="math inline">\(y\)</span>: <span class="math inline">\(\arcsin \frac{(1^2) + 1}{2 \cdot 1} = \arcsin 1 = \frac{\pi}{2}\)</span>, <span class="math inline">\(\arcsin \frac{((-1)^2) + 1}{2 \cdot (-1)} = \arcsin -1 = -\frac{\pi}{2}\)</span>.</p>
-<h3 id="fx-sqrtx-gx-x2-yx-ex">4 <span class="math inline">\(f(x) = \sqrt{x}, g(x) = x^2, y(x) = e^x\)</span></h3>
-<p><span class="math display">\[\begin{align}
-&amp; f \circ g = f(g(x)) = \sqrt{g(x)} = \sqrt{x^2} = |x| \\
-&amp; g \circ f = g(f(x)) = (f(x))^2 = (\sqrt{x})^2 = x, x \ge 0 \\
-&amp; f \circ f = f(f(x)) = \sqrt{f(x)} = \sqrt{\sqrt{x}} = \sqrt[4]{x} \\
-&amp; f \circ g \circ y = f(g(y(x))) = \sqrt{g(y(x))} = \sqrt{(y(x))^2} = \sqrt{(e^x)^2} = e^x\\
-\end{align}\]</span></p>
-<h3 id="обратные-g-обратна-к-f-если-gfx-x">5 Обратные, <span class="math inline">\(g\)</span> обратна к <span class="math inline">\(f\)</span> если <span class="math inline">\(g(f(x)) = x\)</span></h3>
-<p>Чтобы их найти достаточно выразить <span class="math inline">\(x\)</span> из <span class="math inline">\(y = f(x)\)</span>.</p>
-<h4 id="fx-sqrtx"><span class="math inline">\(f(x) = \sqrt{x}\)</span></h4>
-<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \sqrt{x}\)</span>. Получим <span class="math inline">\(x = y^2\)</span></p>
-<p>Значит обратная функция <span class="math inline">\(g(x) = x^2\)</span>, проверим: <span class="math inline">\(g(f(x)) = (\sqrt{x})^2 = x\)</span></p>
-<h4 id="fx-frac2x-3"><span class="math inline">\(f(x) = \frac{2}{x + 3}\)</span></h4>
-<p>Выразим <span class="math inline">\(x\)</span> из <span class="math inline">\(y = \frac{2}{x + 3}\)</span>. Получим <span class="math inline">\(x = \frac{2}{y} - 3\)</span>.</p>
-<p><span class="math display">\[g(x) = \frac{2}{y} - 3\]</span></p>
-<p>Проверка аналогична:</p>
-<p><span class="math display">\[ g(f(x)) = \frac{2}{f(x)} - 3 = \frac{2}{\frac{2}{x+3}} - 3 = \frac{2(x+3)}{2} - 3 = x + 3 - 3 = x \]</span></p>
-<h4 id="fx-arctanln-3x"><span class="math inline">\(f(x) = \arctan(\ln 3x)\)</span></h4>
-<p>Аналогично <span class="math display">\[\begin{align}
-  &amp; y = \arctan(\ln 3x) \\
-  &amp; \tan y = \tan (\arctan (\ln 3x)) \\
-  &amp; \tan y = \ln 3x \\
-  &amp; e^{\tan y} = e^{\ln 3x} \\
-  &amp; e^{\tan y} = 3x \\
-  &amp; \frac{e^{\tan y}}{3} = x \\
-  &amp; g(x) = \frac{e^{\tan x}}{3}
-\end{align}\]</span></p>
-<p>Уххх</p>
-<p>Проверка <span class="math display">\[\begin{align}
- &amp; g(f(x)) = \frac{e^{\tan f(x)}}{3} = \frac{e^{\tan (\arctan(\ln 3x))}}{3} = \frac{e^{\ln 3x}}{3} = 
- \frac{3x}{3} = x
-\end{align}\]</span></p>
-<h3 id="коши">6. Коши</h3>
-<p><span class="math display">\[\lim_{x \to x_0} f(x) = A\]</span></p>
-<p>Надо для любого <span class="math inline">\(\varepsilon\)</span> уметь находить область (=окрестность) вокруг <span class="math inline">\(x_0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|f(x) - A| &lt; \varepsilon\)</span>.</p>
-<p>Надо для любого отрезка с центром <span class="math inline">\(L\)</span> уметь находить отрезок с центром <span class="math inline">\(x_0\)</span>, что если ты из этого отрезка возьмешь точку <span class="math inline">\(x\)</span>, то <span class="math inline">\(f(x)\)</span> будет в том отрезке, содержащем <span class="math inline">\(L\)</span>.</p>
-<p>Также как с пределами, научимся получать по <span class="math inline">\(\varepsilon\)</span> эту окрестность.</p>
-<p>В данном случае <span class="math inline">\(x_0 = 0\)</span>, <span class="math inline">\(f(x) = |x|\)</span>, <span class="math inline">\(A = 0\)</span>.</p>
-<p>Тогда надо по <span class="math inline">\(\varepsilon\)</span> находить область вокруг <span class="math inline">\(x_0 = 0\)</span>, для любого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span>.</p>
-<p><span class="math inline">\(||x| - 0| &lt; \varepsilon\)</span> это <span class="math inline">\(|x| &lt; \varepsilon\)</span>. Если теперь взять отрезок <span class="math inline">\((-\varepsilon; \varepsilon)\)</span>, то это будет окрестность точки <span class="math inline">\(x_0 = 0\)</span>, для каждого <span class="math inline">\(x\)</span> из которой <span class="math inline">\(|x| &lt; \varepsilon\)</span></p>
-<h3 id="предел">7. Предел</h3>
-<p>В первом можно просто подставить и получить ответ: <span class="math display">\[ \lim_{x \to 3} \frac{x - 3}{2x + 5} = \frac{3 - 3}{6 + 5} = \frac{0}{11} = 0\]</span></p>
-<p>Во втором если так сделать, мы получим деление 0 на 0, что не очень хорошо: <span class="math display">\[ \lim_{x \to 2} \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{2^2 - 4}{2^2 - 5 \cdot 2 + 6} = \frac{0}{0}\]</span></p>
-<p>Поэтому сначала можно попробовать сократить дробь. <span class="math display">\[ \frac{x^2 - 4}{x^2 - 5x + 6} = \frac{(x - 2)(x + 2)}{(x - 3)(x - 2)} = \frac{x + 2}{x - 3}\]</span></p>
-<p>А теперь и под предел можно: <span class="math display">\[ \lim_{x \to 2} \frac{x + 2}{x - 3} = \frac{2 + 2}{2 - 3} = -4 \]</span></p>
-<blockquote>
-<h6 id="почему-x2---5x-6-x---3x---2">Почему <span class="math inline">\(x^2 - 5x + 6 = (x - 3)(x - 2)\)</span>:</h6>
-<p>Формула корней квадратного уравнения <span class="math inline">\(ax^2 + bx + c = 0\)</span>: <span class="math display">\[ x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</span> По формуле находишь корни уравнения, потом подставляешь корни в формулу <span class="math inline">\(a(x - x_1)(x - x_2)\)</span> вместо <span class="math inline">\(x_1\)</span> и <span class="math inline">\(x_2\)</span>.</p>
-<p><span class="math inline">\(x^2 - 5x + 6\)</span>: <span class="math inline">\(a = 1\)</span>, <span class="math inline">\(b = -5\)</span>, <span class="math inline">\(c = 6\)</span>. Найдем корни: <span class="math display">\[ 
-\frac{-(-5) \pm \sqrt{(-5)^2 - 4 \cdot 1 \cdot 6}}{2 \cdot 1} = 
-\frac{5 \pm \sqrt{25 - 24}}{2} = 
-\frac{5 \pm 1}{2}.
-\]</span> То есть первый корень это <span class="math inline">\(x_1 = \frac{5 + 1}{2} = 3\)</span>, второй - <span class="math inline">\(x_2 = \frac{5 - 1}{2} = 2\)</span>.</p>
-<p>Подставим в формулу <span class="math inline">\(a(x - x_1)(x - x_2)\)</span>, получим <span class="math inline">\(1 \cdot (x - 3)(x - 2) = (x - 3)(x - 2)\)</span>.</p>
-</blockquote>
-<h3 id="разложения">8. Разложения</h3>
-<p>Знаем, что <span class="math display">\[ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \dots = 
-\sum_{i = 0}^{\infty} \frac{x^i}{i!} \]</span> Хотим <span class="math inline">\(\frac{e^x + e^{-x}}{2}\)</span>.</p>
-<p>Подставив <span class="math inline">\(-x\)</span> получаем <span class="math display">\[ e^{-x} = 
-1 + \frac{-x}{1!} + \frac{(-x)^2}{2!} + \frac{(-x)^3}{3!} + \dots = 
-1 - \frac{x}{1!} + \frac{x^2}{2!} - \frac{x^3}{3!} + \dots = 
-\sum_{i = 0}^{\infty} \frac{(-1)^i x^i}{i!} \]</span></p>
-<p>Это то же разложение <span class="math inline">\(e^x\)</span>, только теперь слагаемые на нечетных местах с минусом.</p>
-<p>Найдем <span class="math inline">\(e^x + e^{-x}\)</span>. <span class="math display">\[e^x + e^{-x} =
-\sum_{i = 0}^{\infty} (\frac{x^i}{i!} + \frac{(-1)^i x^i}{i!})
-\]</span></p>
-<p>На нечетных индексах получим разность одинаковых слагаемых, на четных сумму одинаковых слагаемых. В итоге <span class="math display">\[
-\sum_{i = 0}^{\infty} (\frac{x^i}{i!} + \frac{(-1)^i x^i}{i!}) =
-\sum_{i - четный, i \ge 0}^{\infty} 2\frac{x^i}{i!} =
-\sum_{k = 1}^{\infty} 2\frac{x^{2k}}{(2k)!}\]</span></p>
-<p>После деления на <span class="math inline">\(2\)</span> получим</p>
-<p><span class="math display">\[
-\sinh{x} = 
-\frac{e^x + e^{-x}}{2} =  
-\sum_{k = 0}^{\infty} \frac{x^{2k}}{(2k)!}
-\]</span></p>
-<p>Аналогично <span class="math display">\[
-\cosh{x} = 
-\frac{e^x - e^{-x}}{2} =  
-\sum_{k = 0}^{\infty} \frac{x^{2k+1}}{(2k+1)!}
-\]</span></p>
-<h3 id="разложить-frac1x-sin-x2">Разложить <span class="math inline">\(\frac{1}{x} \sin x^2\)</span></h3>
-<p><span class="math display">\[
-\sin x = 
-\frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots
-\]</span></p>
-<p><span class="math display">\[
-\sin x^2 = 
-\frac{x^2}{1!} - \frac{x^6}{3!} + \frac{x^{10}}{5!} + \dots
-\]</span></p>
-<p><span class="math display">\[
-\frac{1}{x} \sin x^2 = 
-\frac{x}{1!} - \frac{x^5}{3!} + \frac{x^{9}}{5!} + \dots
-\]</span></p>
-<p>Нам надо до <span class="math inline">\(x^5\)</span>, тогда <span class="math display">\[
-\frac{1}{x} \sin x^2 = 
-\frac{x}{1!} - \frac{x^5}{3!}
-\]</span></p>
+<p>Все что ниже очень сильно похоже на то же самое про методы класса. И в принципе скорее всего ты это знаешь, я просто накидал всего, потому что мне понравилось писать</p>
+<hr />
+<p>В общем в любом языке есть функции, это такие штуки, которые принимают что-то и возвращают какой-то результат или не возвращают ничего.</p>
+<p>В C++ функция определяется таким синтаксисом:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">return_type</span> function_name(args) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="co">// code</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>}</span></code></pre></div>
+<p><code>return_type</code> это какой-то тип или <code>void</code> если функция ничего не возвращает <code>args</code> это список аргументов функции</p>
+<p>Например это принимает <code>x</code> и возвращает его модуль;</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">int</span> abs(<span class="dt">int</span> x) {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="cf">if</span> (x &lt; <span class="dv">0</span>) <span class="cf">return</span> -x;</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="cf">else</span> <span class="cf">return</span> x;</span>
+<span id="cb2-4"><a href="#cb2-4"></a>}</span></code></pre></div>
+<p>принимает <code>x</code> и возвращает <code>true</code>, если он отрицательный, иначе <code>false</code>;</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">bool</span> is_negative(<span class="dt">int</span> x) {</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="cf">return</span> x &lt; <span class="dv">0</span>;</span>
+<span id="cb3-3"><a href="#cb3-3"></a>}</span></code></pre></div>
+<p>принимает <code>x</code> и возвращает <code>true</code>, если это символ цифры и <code>false</code> иначе;</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">bool</span> is_digit(<span class="dt">char</span> x) {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="cf">return</span> <span class="ch">&#39;0&#39;</span> &lt;= x &amp;&amp; x &lt;= <span class="ch">&#39;9&#39;</span>;</span>
+<span id="cb4-3"><a href="#cb4-3"></a>}</span></code></pre></div>
+<p>принимает <code>a</code> и <code>b</code> и возвращает <code>true</code>, если <code>a</code> меньше <code>b</code> и <code>false</code> иначе;</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">bool</span> less(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="cf">return</span> a &lt; b;</span>
+<span id="cb5-3"><a href="#cb5-3"></a>}</span></code></pre></div>
+<p>заменяет все символы <code>from</code> в строке на символы <code>to</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1"></a><span class="dt">void</span> replace(<span class="bu">std::</span>string <span class="at">const</span>&amp; str, <span class="dt">char</span> from, <span class="dt">char</span> to) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; str.size(); ++i) {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="cf">if</span> (str[i] == from) str[i] = to;</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  }</span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span></code></pre></div>
+<p>После объявления ее можно вызвать, передав ей аргументы, например</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1"></a><span class="dt">int</span> main() {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="bu">std::</span>cout &lt;&lt; abs(-<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>          <span class="co">// 10</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>            &lt;&lt; abs(<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>           <span class="co">// 10</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>            &lt;&lt; is_negative(<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>   <span class="co">// false</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>            &lt;&lt; is_negative(-<span class="dv">10</span>) &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>  <span class="co">// true </span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>            &lt;&lt; less(<span class="dv">1</span>, <span class="dv">0</span>) &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>;       <span class="co">// false</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>} </span></code></pre></div>
+<p>Или можно было изначально написать например такой код, тут функции эквивалентны тем что выше, просто реализованы друг через друга.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1"></a><span class="dt">bool</span> less(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="cf">return</span> a &lt; b;</span>
+<span id="cb8-3"><a href="#cb8-3"></a>}</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="dt">bool</span> is_negative(<span class="dt">int</span> a) {</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="cf">return</span> less(a, <span class="dv">0</span>);</span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="dt">int</span> abs(<span class="dt">int</span> x) {</span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="cf">if</span> (is_negative(x))</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="cf">return</span> -x;</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="cf">else</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>    <span class="cf">return</span> x;</span>
+<span id="cb8-14"><a href="#cb8-14"></a>}</span></code></pre></div>
+<hr />
+<p>Так вот, это обычные функции, и в C++ они не могут быть вложены ни в какие другие объявления, то есть нельзя объявить функцию внутри другой функции.</p>
+<p>Такой код не скомпилируется</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1"></a><span class="dt">void</span> f() {  <span class="co">// объявление первой функции</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="dt">void</span> g() { <span class="co">// объявление второй функции внутри первой</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="co">// do something</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  }</span>
+<span id="cb9-5"><a href="#cb9-5"></a>}</span></code></pre></div>
+<p>В том коде который ты послала происходило что-то вроде</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1"></a><span class="dt">int</span> main() {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  ...</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="dt">bool</span> is_letter(<span class="dt">unsigned</span> <span class="dt">char</span> c) {</span>
+<span id="cb10-4"><a href="#cb10-4"></a>      <span class="cf">return</span> <span class="dv">192</span> &lt;= c &amp;&amp; c &lt;= <span class="dv">233</span> + <span class="dv">32</span>;</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    }</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  ...</span>
+<span id="cb10-7"><a href="#cb10-7"></a>}</span></code></pre></div>
+<p>А это аналогично проблеме в коде с <code>f</code> и <code>g</code> выше.</p>
+<p>Правильно определять функции не вложено и вызывать их из других функций:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1"></a><span class="dt">bool</span> is_letter(<span class="dt">unsigned</span> <span class="dt">char</span> c) {</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="cf">return</span> <span class="dv">192</span> &lt;= c &amp;&amp; c &lt;= <span class="dv">233</span> + <span class="dv">32</span>;</span>
+<span id="cb11-3"><a href="#cb11-3"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="dt">int</span> main() {</span>
+<span id="cb11-6"><a href="#cb11-6"></a>  ...</span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="co">// тут вызываем is_letter, передавая ей символ для проверки,</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="co">// она вернет нам правда ли мы считаем этот символ буквой</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="dt">bool</span> defis = ... &amp;&amp; is_letter(data[i - <span class="dv">1</span>]) &amp;&amp; ...</span>
+<span id="cb11-10"><a href="#cb11-10"></a>  ...</span>
+<span id="cb11-11"><a href="#cb11-11"></a>}</span></code></pre></div>
 </body>
 </html>
